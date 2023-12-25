@@ -1,5 +1,5 @@
-import Layout from "../components/Layout/layout.js";
-import { apiHandler } from "../api/post.js";
+import Layout from "../components/Layout/layout";
+import { apiHandler } from "../api/post";
 
 export default function Blog() {
   apiHandler().then((data) => {

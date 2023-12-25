@@ -6,7 +6,7 @@ export const apiHandler = async () => {
     }
     return await res.json();
   } catch (e) {
-    console.error("fetch error: ", error);
+    console.error("fetch error: ", Error);
   }
 };
 
