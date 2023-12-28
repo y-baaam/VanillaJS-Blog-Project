@@ -10,6 +10,8 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "dist"), // 번들 결과물 위치
     filename: "bundle.js",
+    publicPath: "/", // 애플리케이션의 모든 애셋에 대한 기본 경로
+    clean: true, // 내보내기 전에 output 디렉터리를 정리합니다.
   },
   module: {
     rules: [
@@ -28,7 +30,7 @@ module.exports = {
         },
       },
       {
-        test: /\.css$/,
+        test: /\.css$/i,
         use: [
           { loader: "style-loader" },
           {
