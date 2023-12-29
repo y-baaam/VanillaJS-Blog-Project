@@ -1,6 +1,7 @@
+import styles from "./navbar.css";
 function Navbar() {
   return `
-    <nav class="navbar">
+    <nav class=${styles.navbar}>
       <ul>
         <li><a href="/" data-link>홈</a></li>
         <li><a href="/about" data-link>소개</a></li>
