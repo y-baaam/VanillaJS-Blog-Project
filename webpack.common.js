@@ -1,6 +1,7 @@
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
+// const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
   mode: "development",
@@ -16,14 +17,10 @@ module.exports = {
       inject: "body", // 번들을 body 태그 끝에 주입
     }),
     new CssMinimizerPlugin(),
+    // new MiniCssExtractPlugin(),
   ],
   module: {
     rules: [
-      {
-        test: /\.css$/i,
-        use: ["style-loader", "css-loader"],
-      },
-
       {
         test: /[\.js]$/, // .js 에 한하여 babel-loader를 이용하여 transpiling
         exclude: /node_modules/, // node_modules 내의 파일 제외
@@ -37,6 +34,22 @@ module.exports = {
         use: {
           loader: "ts-loader",
         },
+      },
+      // {
+      //   test: /\.css$/i,
+      //   use: [MiniCssExtractPlugin.loader, "css-loader"],
+      // },
+      {
+        test: /\.css$/i,
+        use: [
+          { loader: "style-loader" },
+          {
+            loader: "css-loader",
+            options: {
+              modules: true,
+            },
+          },
+        ],
       },
     ],
   },
