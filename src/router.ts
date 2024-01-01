@@ -1,6 +1,6 @@
 import Home from "./views/home";
 import About from "./views/about";
-import Blog from "./views/blog";
+import Post from "./views/post";
 
 type ViewFunction = () => string;
 
@@ -9,7 +9,7 @@ type ViewFunction = () => string;
 const routes: Record<string, ViewFunction> = {
   "/": Home,
   "/about": About,
-  "/blog": Blog,
+  "/post": Post,
 };
 
 function router(): void {
