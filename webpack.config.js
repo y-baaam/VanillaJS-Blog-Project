@@ -3,11 +3,47 @@ const path = require("path");
 
 module.exports = {
   mode: "development",
-  entry: "./src/index.js",
-  output: {
-    path: path.resolve(__dirname, "dist"),
-    filename: "bundle.js",
+  resolve: {
+    extensions: [".tsx", ".ts", ".js", ".json", ".css"],
   },
+  entry: "./src/index.ts", // 번들링 시작 위치
+  output: {
+    path: path.resolve(__dirname, "dist"), // 번들 결과물 위치
+    filename: "bundle.js",
+    publicPath: "/", // 애플리케이션의 모든 애셋에 대한 기본 경로
+    clean: true, // 내보내기 전에 output 디렉터리를 정리합니다.
+  },
+  module: {
+    rules: [
+      {
+        test: /[\.js]$/, // .js 에 한하여 babel-loader를 이용하여 transpiling
+        exclude: /node_modules/, // node_modules 내의 파일 제외
+        use: {
+          loader: "babel-loader",
+        },
+      },
+      {
+        test: /\.ts$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "ts-loader",
+        },
+      },
+      {
+        test: /\.css$/i,
+        use: [
+          { loader: "style-loader" },
+          {
+            loader: "css-loader",
+            options: {
+              modules: true,
+            },
+          },
+        ],
+      },
+    ],
+  },
+
   plugins: [
     new HtmlWebpackPlugin({
       template: "./index.html", // 기존의 index.html 파일 위치
@@ -17,18 +53,8 @@ module.exports = {
     // ... (추가적인 플러그인 설정)
   ],
 
-  module: {
-    rules: [
-      {
-        test: /\.js$/, // .js 파일에 대한 설정
-        exclude: /node_modules/, // node_modules 내의 파일 제외
-        use: {
-          loader: "babel-loader",
-          options: {
-            presets: ["@babel/preset-env", "@babel/preset-react"], // ES6 및 JSX를 일반 JavaScript로 변환
-          },
-        },
-      },
-    ],
+  devServer: {
+    host: "localhost", // live-server host 및 port
+    port: 5500,
   },
 };
