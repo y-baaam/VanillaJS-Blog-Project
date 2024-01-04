@@ -1,7 +1,6 @@
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
-// const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
   mode: "development",
@@ -18,7 +17,6 @@ module.exports = {
       inject: "body", // 번들을 body 태그 끝에 주입
     }),
     new CssMinimizerPlugin(),
-    // new MiniCssExtractPlugin(),
   ],
   module: {
     rules: [
@@ -36,10 +34,7 @@ module.exports = {
           loader: "ts-loader",
         },
       },
-      // {
-      //   test: /\.css$/i,
-      //   use: [MiniCssExtractPlugin.loader, "css-loader"],
-      // },
+
       {
         test: /\.css$/i,
         use: [
