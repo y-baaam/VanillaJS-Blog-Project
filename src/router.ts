@@ -1,15 +1,16 @@
 import Home from "./views/home";
 import About from "./views/about";
 import Post from "./views/post";
+import GuestBook from "./views/guestBook";
 
 type ViewFunction = () => string;
 
-// routes 객체는 URL 경로(예: "/", "/about", "/blog")와 이 경로에 대응하는 뷰 함수(Home, About, Blog)를 매핑합니다.
-// 브라우저의 현재 경로에 따라 적절한 뷰 함수를 실행하여 해당 페이지를 렌더링합니다.
+// routes 객체는 URL 경로와 이 경로에 대응하는 뷰 함수(Home, About, Post, GuestBook)를 매핑합니다.
 const routes: Record<string, ViewFunction> = {
   "/": Home,
   "/about": About,
   "/post": Post,
+  "/guestBook": GuestBook,
 };
 
 function router(): void {
