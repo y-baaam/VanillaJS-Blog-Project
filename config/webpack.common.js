@@ -34,6 +34,13 @@ module.exports = {
           loader: "ts-loader",
         },
       },
+      {
+        test: /\.html$/i,
+        loader: "html-loader",
+        options: {
+          minimize: true,
+        },
+      },
 
       {
         test: /\.css$/i,
