@@ -8,3 +8,17 @@
 .header h1 {
   margin: 0;
 }
+.logo {
+}
+.logo::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1px;
+  bottom: -1px;
+  left: 0px;
+  background-color: rgb(230, 230, 230);
+  transform-origin: right bottom;
+  transition: transform 0.25s ease-out 0s;
+}
