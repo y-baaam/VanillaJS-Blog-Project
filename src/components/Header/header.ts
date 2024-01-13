@@ -3,13 +3,7 @@ import styles from "./header.css";
 function Header() {
   return `
   <header class=${styles.header}>
-    <h1 class=${styles.logo}>Blog</h1>
-    <div class=${styles.navBar}>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
+    <a href="/" data-link class=${styles.logo}>Blog</a>
   </header>`;
 }
 export default Header;

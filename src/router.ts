@@ -1,7 +1,9 @@
-import Home from "./views/home";
-import About from "./views/about";
-import Post from "./views/post";
-import GuestBook from "./views/guestBook";
+import Home from "./views/home/home";
+import About from "./views/about/about";
+import Post from "./views/post/post";
+import GuestBook from "./views/guestBook/guestBook";
+// import ErrorImg from "../public/images/404.png";
+import ErrorPage from "./views/error/error";
 
 type ViewFunction = () => string;
 
@@ -31,7 +33,7 @@ function router(): void {
       // 이를 통해 페이지의 메인 콘텐츠가 동적으로 업데이트됩니다.
       appDiv.innerHTML = viewFunction();
     } else {
-      appDiv.innerHTML = `<div>404 Error</div>`;
+      appDiv.innerHTML = `${ErrorPage()}`;
     }
 }
 

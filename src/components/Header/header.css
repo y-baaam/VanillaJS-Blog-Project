@@ -5,12 +5,15 @@
   text-align: center;
 }
 
-.header h1 {
+.logo {
+  display: block;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
   margin: 0;
 }
-.logo {
-}
-.logo::after {
+
+.css-val4rh::after {
   content: "";
   position: absolute;
   width: 100%;
