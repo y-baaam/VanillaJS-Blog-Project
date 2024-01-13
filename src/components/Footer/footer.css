@@ -1,13 +1,18 @@
 .footer {
-  background-color: #333;
-  color: white;
-  text-align: center;
-  padding: 20px 0;
-  position: absolute;
-  bottom: 0;
   width: 100%;
+
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  text-align: center;
+
+  padding: 20px 0;
+  color: white;
+  background-color: #333;
 }
 
-.footer p {
-  margin: 0;
+.link:visited {
+  text-decoration: none;
+  decoration: none;
+  color: rgb(230, 230, 230);
 }

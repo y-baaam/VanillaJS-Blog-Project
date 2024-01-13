@@ -9,7 +9,8 @@ export default function Post() {
 
   const content = `
   <div class=${styles.postContainer}>블로그 페이지
-    <img src="/images/ggg.png" />
+
+
   </div>`;
   return Layout(content);
 }

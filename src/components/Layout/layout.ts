@@ -1,17 +1,15 @@
 import Header from "../Header/header";
 import Footer from "../Footer/footer";
-import Navbar from "../Navbar/navbar";
 import styles from "./layout.css";
 
 export default function Layout(content: string) {
   return `
   <div class=${styles.layout}>
-    <div class=${styles.headerContainer}>
+    <div class=${styles.contentsContainer}>
       ${Header()}
-      ${Navbar()}
+      ${content}
+      ${Footer()}
     </div>
-    ${content}
-    ${Footer()}
   </div>
   `;
 }
