@@ -54,6 +54,18 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /\.(png|jpe?g|gif)$/i,
+        use: [
+          {
+            loader: "url-loader",
+            options: {
+              limit: 10000, // 10kb 미만 파일은 Data URL로 변환
+              name: "images/[name].[ext]", // 10kb 이상 파일은 file-loader가 처리
+            },
+          },
+        ],
+      },
     ],
   },
 
