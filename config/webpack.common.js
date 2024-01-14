@@ -1,6 +1,7 @@
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
+const Dotenv = require("dotenv-webpack");
 
 module.exports = {
   mode: "development",
@@ -17,6 +18,7 @@ module.exports = {
       inject: "body", // 번들을 body 태그 끝에 주입
     }),
     new CssMinimizerPlugin(),
+    new Dotenv(),
   ],
   module: {
     rules: [
