@@ -1,6 +1,7 @@
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
+const Dotenv = require("dotenv-webpack");
 
 module.exports = {
   mode: "development",
@@ -17,6 +18,7 @@ module.exports = {
       inject: "body", // 번들을 body 태그 끝에 주입
     }),
     new CssMinimizerPlugin(),
+    new Dotenv(),
   ],
   module: {
     rules: [
@@ -50,6 +52,18 @@ module.exports = {
             loader: "css-loader",
             options: {
               modules: true,
+            },
+          },
+        ],
+      },
+      {
+        test: /\.(png|jpe?g|gif)$/i,
+        use: [
+          {
+            loader: "url-loader",
+            options: {
+              limit: 10000, // 10kb 미만 파일은 Data URL로 변환
+              name: "images/[name].[ext]", // 10kb 이상 파일은 file-loader가 처리
             },
           },
         ],

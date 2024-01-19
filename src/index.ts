@@ -1,6 +1,7 @@
 import App from "./app";
 import router from "./router";
 import "../styles/reset.css";
+import "../styles/styles.css";
 
 // 브라우저의 뒤로 가기/앞으로 가기를 감지합니다.
 window.addEventListener("popstate", router);

@@ -1,0 +1,9 @@
+.errorContainer {
+}
+.errorText {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 32px;
+}
