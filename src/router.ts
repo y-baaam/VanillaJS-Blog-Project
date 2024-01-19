@@ -1,7 +1,7 @@
 import Home from "./views/home/home";
 import About from "./views/about/about";
 import Post from "./views/post/post";
-import GuestBook from "./views/guestBook/guest-book";
+import GuestBook from "./views/guest-book/guest-book";
 // import ErrorImg from "../public/images/404.png";
 import ErrorPage from "./views/error/error";
 
