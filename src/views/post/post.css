@@ -1,2 +1,48 @@
 .postContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.titleContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+.postBody {
+}
+.postNum {
+  padding: 12px;
+}
+.titleCategory {
+  font-size: 32px;
+}
+
+.categoryList {
+  display: flex;
+  flex-direction: row;
+  column-gap: 32px;
+  margin-bottom: 12px;
+  padding: 16px;
+  max-width: 720px;
+}
+.category {
+  font-size: 20px;
+}
+.postContentsContainer {
+}
+.postContentsTitle {
+}
+.postContentsText {
+}
+
+.postContentsBottomContainer {
+  display: flex;
+  flex-direction: row;
+
+  justify-content: space-between;
 }
