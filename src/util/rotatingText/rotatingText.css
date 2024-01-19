@@ -1,0 +1,19 @@
+.rotating-text-container {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  overflow: hidden; /* 컨테이너 내부의 오버플로우를 숨깁니다 */
+  height: 30px; /* 텍스트의 높이를 고정시킵니다 */
+}
+
+#rotatingText {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(20px); /* 초기 위치를 아래로 조정합니다 */
+  transition: opacity 0.5s, transform 0.5s; /* 페이드와 슬라이드 효과에 대한 전환을 정의합니다 */
+}
+
+.fade {
+  opacity: 1;
+  transform: translateY(0); /* 최종 위치로 이동합니다 */
+}
