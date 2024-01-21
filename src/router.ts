@@ -4,7 +4,7 @@ import Post from "./views/post/post";
 import GuestBook from "./views/guest-book/guest-book";
 import ErrorPage from "./views/error/error";
 
-type ViewFunction = () => string | HTMLElement;
+type ViewFunction = () => string | HTMLElement | Promise<string | HTMLElement>;
 
 // routes 객체는 URL 경로와 이 경로에 대응하는 뷰 함수(Home, About, Post, GuestBook)를 매핑합니다.
 const routes: Record<string, ViewFunction> = {
