@@ -9,7 +9,10 @@ export default function utterances(repo: string) {
   script.crossOrigin = "anonymous";
 
   const container = document.getElementById("utterances-container");
+
   if (container) {
     container.appendChild(script);
+  } else {
+    console.error("utterances-container not found");
   }
 }
