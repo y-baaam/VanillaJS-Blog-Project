@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
   document.body.addEventListener("click", (e: MouseEvent) => {
     const target = e.target as HTMLElement;
     if (
-      e.target instanceof HTMLAnchorElement && // 타입 가드를 사용하여 HTMLAnchorElement임을 확인
+      e.target instanceof HTMLAnchorElement &&
       target.matches("[data-link]")
     ) {
       e.preventDefault();
@@ -23,5 +23,5 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  router(); // 페이지가 처음 로드될 때 초기 라우트를 실행
+  router();
 });
