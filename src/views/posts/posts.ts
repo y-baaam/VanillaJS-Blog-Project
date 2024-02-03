@@ -1,6 +1,6 @@
 import Layout from "../../components/Layout/layout";
 
-import styles from "./post.css";
+import styles from "./posts.css";
 
 export default function Post() {
   const content = `
