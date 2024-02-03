@@ -19,9 +19,12 @@
     "css-minimizer-webpack-plugin": "^5.0.1",
     "dotenv": "^16.3.1",
     "file-loader": "^6.2.0",
+    "gray-matter": "^4.0.3",
     "html-loader": "^4.2.0",
     "html-webpack-plugin": "^5.5.4",
+    "marked": "^11.2.0",
     "mini-css-extract-plugin": "^2.7.6",
+    "raw-loader": "^4.0.2",
     "style-loader": "^3.3.3",
     "ts-loader": "^9.5.1",
     "typescript": "^5.3.3",
@@ -33,6 +36,7 @@
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.39.3",
+    "buffer": "^6.0.3",
     "dotenv-webpack": "^8.0.1"
   }
 }
