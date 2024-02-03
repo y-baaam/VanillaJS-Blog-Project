@@ -2,11 +2,15 @@ const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
 const Dotenv = require("dotenv-webpack");
+const webpack = require("webpack");
 
 module.exports = {
   mode: "development",
   resolve: {
     extensions: [".ts", ".js", ".json", ".css"],
+    fallback: {
+      buffer: require.resolve("buffer/"),
+    },
   },
   entry: path.resolve(__dirname, "../src/index.ts"), // 번들링 시작 위치
 
@@ -19,6 +23,9 @@ module.exports = {
     }),
     new CssMinimizerPlugin(),
     new Dotenv(),
+    new webpack.ProvidePlugin({
+      Buffer: ["buffer", "Buffer"],
+    }),
   ],
   module: {
     rules: [
@@ -43,7 +50,10 @@ module.exports = {
           minimize: true,
         },
       },
-
+      {
+        test: /\.md$/,
+        use: "raw-loader",
+      },
       {
         test: /\.css$/i,
         use: [
