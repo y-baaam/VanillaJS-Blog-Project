@@ -37,6 +37,7 @@
   "dependencies": {
     "@supabase/supabase-js": "^2.39.3",
     "buffer": "^6.0.3",
-    "dotenv-webpack": "^8.0.1"
+    "dotenv-webpack": "^8.0.1",
+    "highlight.js": "^11.9.0"
   }
 }
