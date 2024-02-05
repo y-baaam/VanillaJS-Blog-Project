@@ -6,7 +6,6 @@ import markContent from "../../../../content/example/index.md";
 import matter from "gray-matter";
 import * as marked from "marked";
 
-// code highlight 기능입니다.
 import hljs from "highlight.js";
 import "./highlight.scss";
 
@@ -24,10 +23,6 @@ export default async function Post() {
   rawHtml.querySelectorAll("pre code").forEach((block) => {
     hljs.highlightElement(block as HTMLElement);
   });
-
-  console.log(frontMatter); // 프론트매터 메타데이터를 출력합니다.
-  console.log(htmlContent); // 변환된 HTML을 출력합니다.
-  console.log(hljs, "hljs");
 
   const content = `
   <div class=${styles.postContainer}>
