@@ -8,14 +8,7 @@ import * as marked from "marked";
 
 // code highlight 기능입니다.
 import hljs from "highlight.js";
-import javascript from "highlight.js/lib/languages/javascript";
-import css from "highlight.js/lib/languages/css";
-import html from "highlight.js/lib/languages/xml";
-import "highlight.js/styles/github.css";
-
-hljs.registerLanguage("javascript", javascript);
-hljs.registerLanguage("css", css);
-hljs.registerLanguage("html", html);
+import "./highlight.scss";
 
 export default async function Post() {
   // gray-matter를 사용하여 프론트매터와 마크다운 본문을 분리

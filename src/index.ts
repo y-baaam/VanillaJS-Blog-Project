@@ -3,6 +3,14 @@ import router from "./router";
 import "../styles/reset.css";
 import "../styles/styles.css";
 
+import hljs from "highlight.js";
+import javascript from "highlight.js/lib/languages/javascript";
+import css from "highlight.js/lib/languages/css";
+import html from "highlight.js/lib/languages/xml";
+hljs.registerLanguage("javascript", javascript);
+hljs.registerLanguage("css", css);
+hljs.registerLanguage("html", html);
+
 // 브라우저의 뒤로 가기/앞으로 가기를 감지합니다.
 window.addEventListener("popstate", router);
 
