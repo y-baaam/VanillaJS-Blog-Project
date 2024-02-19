@@ -1,7 +1,7 @@
 import Layout from "../../../components/Layout/layout";
 import styles from "./post.css";
 import markdownStyle from "../../../../styles/markdown-style.css";
-import markContent from "../../../../content/posts/example1.md";
+import markContent from "../../../../public/content/posts/example1.md";
 
 import matter from "gray-matter";
 import * as marked from "marked";
