@@ -1,0 +1,18 @@
+[
+  {
+    "title": "example1",
+    "description": "자바스크립트",
+    "date": "2023-12-31",
+    "category": "JavaScript",
+    "path": "example1",
+    "featured": true
+  },
+  {
+    "title": "example2",
+    "description": "리액트",
+    "date": "2024-01-31",
+    "category": "React",
+    "path": "example1",
+    "featured": true
+  }
+]
