@@ -4,8 +4,8 @@ import styles from "./layout.css";
 
 export default function Layout(htmlContent: string): HTMLElement {
   const layoutHTML = `
-  <div class=${styles.layout}>
-    <div class=${styles.contentsContainer}>
+  <div class=${styles["layout"]}>
+    <div class=${styles["contents__container"]}>
       ${Header()}
       ${htmlContent}
       ${Footer()}
