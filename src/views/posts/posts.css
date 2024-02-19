@@ -33,20 +33,3 @@
 .posts__category {
   font-size: 20px;
 }
-.posts__item {
-}
-.posts__item--title {
-}
-.posts__item--text {
-}
-
-.posts__item--bottom {
-  display: flex;
-  flex-direction: row;
-
-  justify-content: space-between;
-}
-.posts__item--date {
-}
-.posts__item--category {
-}
