@@ -8,8 +8,8 @@ export type Post = {
 };
 
 export async function getFeaturedPosts(): Promise<Post[]> {
-  return getAllPosts() //
-    .then((posts) => posts.filter((post) => post.featured));
+  const posts = await getAllPosts();
+  return posts.filter((post) => post.featured);
 }
 
 export async function getAllPosts(): Promise<Post[]> {
