@@ -8,14 +8,14 @@ export default async function Posts() {
   const postsLength = (await getFeaturedPosts()).length;
 
   const content = `
-  <div class=${styles["posts"]}>
+  <section class=${styles["posts"]}>
     <div class=${styles["posts__header"]}>
-      <div class=${styles["posts__header--title"]}>title</div>
-      <div class=${styles["posts__header--num"]}>${postsLength} posts</div>
+      <div class=${styles["posts__header__title"]}>title</div>
+      <div class=${styles["posts__header__num"]}>${postsLength} posts</div>
     </div>
 
     <div class=${styles["posts__body"]}>
-      <div class=${styles["posts__category--list"]}>
+      <div class=${styles["posts__category-list"]}>
         <div class=${styles["posts__category"]}>All</div>
         <div class=${styles["posts__category"]}>category</div>
         <div class=${styles["posts__category"]}>category</div>
@@ -25,7 +25,7 @@ export default async function Posts() {
       </div>
       ${postItems}
     </div>  
-  </div>`;
+  </section>`;
 
   return Layout(content);
 }

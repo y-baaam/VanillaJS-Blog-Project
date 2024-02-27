@@ -4,12 +4,12 @@ import styles from "./guest-book.css";
 
 export default async function GuestBook() {
   const content = `
-    <div class=${styles.guestBookContainer}>
-      <div class=${styles.guestBookTextContainer}>
+    <section class=${styles["guest-book"]}>
+      <div class=${styles["guest-book__title"]}>
         <div>자유롭게 방명록을 작성해주세요 🤗</div>
       </div>
       <div id="utterances-container" ></div>
-    </div>
+    </section>
   `;
 
   const layoutContent = await Layout(content);

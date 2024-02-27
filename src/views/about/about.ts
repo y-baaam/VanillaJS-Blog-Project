@@ -3,9 +3,9 @@ import styles from "./about.css";
 
 export default function About() {
   const content = `
-    <div class=${styles.aboutContainer}>      
+    <section class=${styles["about"]}>      
       <div></div>
       <div></div>
-    </div>`;
+    </section>`;
   return Layout(content);
 }

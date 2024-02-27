@@ -7,16 +7,16 @@ export default async function PostItem() {
     .map(
       (post) => `
     <div class=${styles["post__item"]}>
-      <a class=${styles["post__item--link"]} href=${post.path}>
-        <div class=${styles["post__item--title"]}>
+      <a class=${styles["post__item__link"]} href=${post.path}>
+        <div class=${styles["post__item__title"]}>
           ${post.title}
         </div>
-        <p class=${styles["post__item--description"]}>
+        <p class=${styles["post__item__description"]}>
           ${post.description}
         </p>
-        <div class=${styles["post__item--bottom"]}>
-          <div class=${styles["post__item--date"]}>${post.date}</div>
-          <div class=${styles["post__item--category"]}>${post.category}</div>
+        <div class=${styles["post__item__bottom"]}>
+          <div class=${styles["post__item__date"]}>${post.date}</div>
+          <div class=${styles["post__item__category"]}>${post.category}</div>
         </div>
       </a>
     </div>

@@ -13,16 +13,16 @@
   margin-top: 32px;
   margin-bottom: 32px;
 }
-.posts__header--title {
+.posts__header__title {
   font-size: 32px;
 }
-.posts__header--num {
+.posts__header__num {
   padding: 12px;
 }
 .posts__body {
 }
 
-.posts__category--list {
+.posts__category-ㅣist {
   display: flex;
   flex-direction: row;
   column-gap: 32px;

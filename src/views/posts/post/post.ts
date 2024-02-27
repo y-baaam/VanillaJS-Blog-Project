@@ -25,13 +25,13 @@ export default function Post() {
   });
 
   const content = `
-  <div class=${styles["post"]}>
+  <section class=${styles["post"]}>
     <header class=${styles["post__header"]}>
       <div class=${styles["post__emoji"]}>${frontMatter.emoji}</div>
       <h1 class=${styles["post__title"]}>${frontMatter.title}</h1>
       <div class=${styles["post__categories"]}>${frontMatter.categories}</div>
     </header>
     <div class=${markdownStyle["markdown"]}>${rawHtml.innerHTML}</div>
-  </div>`;
+  </section>`;
   return Layout(content);
 }

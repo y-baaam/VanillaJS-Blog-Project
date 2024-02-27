@@ -4,31 +4,31 @@
 .post__item :hover {
 }
 
-.post__item--link,
-.post__item--link:visited {
+.post__item__link,
+.post__item__link:visited {
   text-decoration: none;
   color: rgb(230, 230, 230);
 }
 
-.post__item--title {
+.post__item__title {
   font-size: 18px;
   margin-bottom: 8px;
   font-family: "GmarketSansMedium";
 }
-.post__item--description {
+.post__item__description {
   font-size: 13px;
   margin-bottom: 16px;
 }
 
-.post__item--bottom {
+.post__item__bottom {
   display: flex;
   flex-direction: row;
 
   justify-content: space-between;
 }
-.post__item--date {
+.post__item__date {
   font-size: 12px;
 }
-.post__item--category {
+.post__item__category {
   font-size: 12px;
 }
