@@ -11,7 +11,7 @@ module.exports = merge(common, {
     // JavaScript가 클라이언트 사이드에서 라우트를 처리할 수 있게 해줍니다.
     historyApiFallback: true,
     static: {
-      directory: path.join(__dirname, "../dist"),
+      directory: path.join(__dirname, "../public"),
     },
     port: 8080,
   },

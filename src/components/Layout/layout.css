@@ -1,8 +1,14 @@
 .layout {
+  width: 720px;
+
   display: flex;
   justify-content: center;
+  align-items: center;
+
+  padding-bottom: 40px;
+  margin: 0 auto;
 }
 
-.contentsContainer {
-  width: 720px;
+.contents__container {
+  width: 100%;
 }

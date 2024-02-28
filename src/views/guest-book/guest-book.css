@@ -1,6 +1,6 @@
-.guestBookContainer {
+.guest-book {
 }
-.guestBookTextContainer {
+.guest-book__title {
   display: flex;
 
   justify-content: center;

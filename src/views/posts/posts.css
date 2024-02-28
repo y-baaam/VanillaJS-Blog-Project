@@ -1,10 +1,10 @@
-.postContainer {
+.posts {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.titleContainer {
+.posts__header {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -13,16 +13,16 @@
   margin-top: 32px;
   margin-bottom: 32px;
 }
-.postBody {
-}
-.postNum {
-  padding: 12px;
-}
-.titleCategory {
+.posts__header__title {
   font-size: 32px;
 }
+.posts__header__num {
+  padding: 12px;
+}
+.posts__body {
+}
 
-.categoryList {
+.posts__category-ㅣist {
   display: flex;
   flex-direction: row;
   column-gap: 32px;
@@ -30,19 +30,6 @@
   padding: 16px;
   max-width: 720px;
 }
-.category {
+.posts__category {
   font-size: 20px;
-}
-.postContentsContainer {
-}
-.postContentsTitle {
-}
-.postContentsText {
-}
-
-.postContentsBottomContainer {
-  display: flex;
-  flex-direction: row;
-
-  justify-content: space-between;
 }

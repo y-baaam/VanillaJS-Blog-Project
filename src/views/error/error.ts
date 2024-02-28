@@ -3,8 +3,8 @@ import styles from "./error.css";
 
 export default function ErrorPage() {
   return `
-  <div class=${styles.errorContainer}>
-    <h1 class=${styles.errorText} >404 Not Found</h1>
-  </div>
+  <section class=${styles["error__container"]}>
+    <h1 class=${styles["error__text"]} >404 Not Found</h1>
+  </section>
   `;
 }

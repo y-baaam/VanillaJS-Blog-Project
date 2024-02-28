@@ -1,7 +1,7 @@
 .footer {
   width: 100%;
-
-  position: absolute;
+  height: 60px;
+  position: fixed;
   left: 0;
   bottom: 0;
   text-align: center;
@@ -11,7 +11,7 @@
   background-color: #333;
 }
 
-.link:visited {
+.footer__link:visited {
   text-decoration: none;
   decoration: none;
   color: rgb(230, 230, 230);

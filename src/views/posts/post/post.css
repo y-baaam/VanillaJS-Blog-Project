@@ -1,2 +1,16 @@
-.postContainer {
+.post {
+  width: 100%;
+  padding: 60px 15px 30px;
+}
+.post__header {
+  margin-top: 40px;
+}
+.post__emoji {
+  font-size: 80px;
+}
+.post__title {
+}
+
+.post__categories {
+  color: aquamarine;
 }
