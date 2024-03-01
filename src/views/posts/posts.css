@@ -22,7 +22,7 @@
 .posts__body {
 }
 
-.posts__category-ㅣist {
+.posts__category-list {
   display: flex;
   flex-direction: row;
   column-gap: 32px;
