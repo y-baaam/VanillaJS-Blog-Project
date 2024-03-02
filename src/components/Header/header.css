@@ -50,7 +50,7 @@
 }
 
 .header__navbar li a:hover {
-  background-color: #dddddd31;
+  background-color: rgb(41, 41, 41);
 }
 
 .header__link {

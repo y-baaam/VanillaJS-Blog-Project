@@ -1,7 +1,9 @@
 .post__item {
-  margin-bottom: 15px;
+  padding: 16px;
 }
-.post__item :hover {
+.post__item:hover {
+  background-color: rgb(41, 41, 41);
+  border-radius: 10px;
 }
 
 .post__item__link,
