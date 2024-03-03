@@ -9,7 +9,7 @@ categories: featured-category2
 ## 예시 글입니다.
 ### 예시 글입니다.
 
-![test](ggg.png)
+![test](../../images/example2/ggg.png)
 
 hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world 
 
