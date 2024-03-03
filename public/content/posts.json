@@ -4,7 +4,7 @@
     "description": "자바스크립트",
     "date": "2023-12-31",
     "category": "JavaScript",
-    "path": "example1",
+    "path": "/post/example1",
     "featured": true
   },
   {
@@ -12,7 +12,7 @@
     "description": "리액트",
     "date": "2024-01-31",
     "category": "React",
-    "path": "example1",
+    "path": "/post/example2",
     "featured": true
   }
 ]
