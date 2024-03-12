@@ -86,3 +86,8 @@ ol {
   margin-top: 0;
   margin-bottom: 16px;
 }
+
+a {
+  text-decoration: none;
+  color: #e6e6e6;
+}
