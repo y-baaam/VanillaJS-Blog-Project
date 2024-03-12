@@ -3,10 +3,11 @@ import { getFeaturedPosts } from "../../api/posts";
 
 export default async function PostItem() {
   const posts = await getFeaturedPosts();
+
   return posts
     .map(
       (post) => `
-    <div class=${styles["post__item"]}>
+    <div class=${styles["post__item"]} data-category=${post.category}>
       <a class=${styles["post__item__link"]} href=${post.path}>
         <div class=${styles["post__item__title"]}>
           ${post.title}
