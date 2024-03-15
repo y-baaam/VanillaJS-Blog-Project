@@ -5,7 +5,7 @@ import Post from "./views/posts/post/post";
 import GuestBook from "./views/guest-book/guest-book";
 import ErrorPage from "./views/error/error";
 
-type ViewFunction = () => string | HTMLElement | Promise<string | HTMLElement>;
+type ViewFunction = () => HTMLElement | Promise<string | HTMLElement | void>;
 
 const routes: Record<string, ViewFunction> = {
   "/": Home,
