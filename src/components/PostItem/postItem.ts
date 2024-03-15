@@ -1,9 +1,6 @@
 import styles from "./postItem.css";
-import { getFeaturedPosts } from "../../api/posts";
-
-export default async function PostItem() {
-  const posts = await getFeaturedPosts();
-
+import { Post } from "../../api/posts";
+export default function PostItem(posts: Post[]) {
   return posts
     .map(
       (post) => `
