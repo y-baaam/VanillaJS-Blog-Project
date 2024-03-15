@@ -1,17 +1,71 @@
 import Layout from "../../components/Layout/layout";
 import styles from "./posts.css";
 import PostItem from "../../components/PostItem/postItem";
-import { getFeaturedPosts } from "../../api/posts";
-import { useState } from "../../util/state/state";
+import { getFeaturedPosts, Post } from "../../api/posts";
+import { State } from "../../util/state/state";
 
 export default async function Posts() {
-  const postsLength = (await getFeaturedPosts()).length;
+  const posts: Post[] = await getFeaturedPosts();
+  const categoryState = new State<string | null>("All");
 
-  const postItemsHtml = await PostItem();
-  const posts = await getFeaturedPosts();
-  const [category, setCategory] = useState<string | null>("All");
+  /**
+   * 카테고리에 따라 포스트를 필터링합니다.
+   * @param {Post[]} posts  카테고리별로 구분할 포스트 목록
+   * @param {string | null} category  필터링할 카테고리
+   * @returns {Post[]}  필터링된 포스트 목록
+   */
+  function filterPostsByCategory(
+    posts: Post[],
+    category: string | null
+  ): Post[] {
+    return category === "All" || !category
+      ? posts
+      : posts.filter((post) => post.category === category);
+  }
 
-  // // DOM로드가 되고 카테고리를 클릭하면 클릭된 카테고리를 가져오는 로직
+  function render() {
+    const selectedCategory = categoryState.getValue();
+    const filteredPosts = filterPostsByCategory(posts, selectedCategory);
+    const filteredPostItemsHtml = PostItem(filteredPosts); // 필터링된 포스트를 기반으로 PostItem을 호출
+
+    //중복된 카테고리 목록 필터링
+    const uniqueCategories = [...new Set(posts.map((post) => post.category))];
+    const uniqueCategoriesMap = uniqueCategories.map((v) => {
+      return `<div class=${styles["posts__category"]}  data-category=${v}>${v}</div>`;
+    });
+
+    const content = `
+    <section class=${styles["posts"]}>
+      <div class=${styles["posts__header"]}>
+        <div class=${styles["posts__header__title"]}>${selectedCategory}</div>
+        <div class=${styles["posts__header__num"]}>${
+      filteredPosts.length
+    } posts</div>
+      </div>
+  
+      <div class=${styles["posts__body"]}>
+        <div class=${styles["posts__category-list"]}>
+          <div class=${styles["posts__category"]} data-category="All">All</div>
+          ${uniqueCategoriesMap.join("")}
+        </div>
+        ${filteredPostItemsHtml}
+      </div>  
+    </section>`;
+
+    const layoutElement = document.getElementById("app");
+    if (layoutElement) {
+      // 기존 내용을 비우기
+      layoutElement.innerHTML = "";
+
+      // Layout 함수로부터 반환된 HTMLElement를 추가
+      const layoutContent = Layout(content);
+      layoutElement.appendChild(layoutContent);
+    } else {
+      console.error("App container not found");
+    }
+  }
+
+  // DOM로드가 되고 카테고리를 클릭하면 클릭된 카테고리를 가져오는 로직
   function setupCategoryListeners() {
     document.addEventListener("click", function (event) {
       const target = event.target as HTMLElement;
@@ -19,35 +73,15 @@ export default async function Posts() {
 
       if (categoryElement) {
         const selectedCategory = categoryElement.getAttribute("data-category");
-        setCategory(selectedCategory);
+        categoryState.setValue(selectedCategory);
+        render();
         console.log("@@ selected category", selectedCategory);
       }
     });
   }
 
-  //중복된 카테고리 필터링
-  const uniqueCategories = [...new Set(posts.map((post) => post.category))];
-  const uniqueCategoriesMap = uniqueCategories.map((v) => {
-    return `<div class=${styles["posts__category"]}  data-category=${v}>${v}</div>`;
-  });
-
-  const content = `
-  <section class=${styles["posts"]}>
-    <div class=${styles["posts__header"]}>
-      <div class=${styles["posts__header__title"]}>${category()}</div>
-      <div class=${styles["posts__header__num"]}>${postsLength} posts</div>
-    </div>
-
-    <div class=${styles["posts__body"]}>
-      <div class=${styles["posts__category-list"]}>
-        <div class=${styles["posts__category"]} data-category="All">All</div>
-        ${uniqueCategoriesMap.join("")}
-      </div>
-      ${postItemsHtml}
-    </div>  
-  </section>`;
-
-  const layoutContent = Layout(content);
+  categoryState.subscribe(render);
   setupCategoryListeners();
-  return layoutContent;
+
+  return render();
 }
