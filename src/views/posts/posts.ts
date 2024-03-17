@@ -67,21 +67,18 @@ export default async function Posts() {
 
   // DOM로드가 되고 카테고리를 클릭하면 클릭된 카테고리를 가져오는 로직
   function setupCategoryListeners() {
-    document.addEventListener("click", function (event) {
-      const target = event.target as HTMLElement;
-      const categoryElement = target.closest(`.${styles["posts__category"]}`);
-
-      if (categoryElement) {
-        const selectedCategory = categoryElement.getAttribute("data-category");
-        categoryState.setValue(selectedCategory);
-        render();
-        console.log("@@ selected category", selectedCategory);
+    document.addEventListener("click", (e) => {
+      let target = e.target as HTMLElement;
+      if (!target?.className?.includes(`${styles["posts__category"]}`)) {
+        return;
       }
+      categoryState.setValue(target.getAttribute("data-category"));
+      render();
     });
   }
 
   categoryState.subscribe(render);
-  setupCategoryListeners();
 
-  return render();
+  render();
+  setupCategoryListeners();
 }
