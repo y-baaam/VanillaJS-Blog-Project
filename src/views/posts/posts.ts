@@ -1,11 +1,11 @@
 import Layout from "../../components/Layout/layout";
 import styles from "./posts.css";
 import PostItem from "../../components/PostItem/postItem";
-import { getFeaturedPosts, Post } from "../../api/posts";
+import { getFeaturedPublicPosts, Post } from "../../api/posts";
 import { State } from "../../util/state/state";
 
 export default async function Posts() {
-  const posts: Post[] = await getFeaturedPosts();
+  const posts: Post[] = await getFeaturedPublicPosts();
   const categoryState = new State<string | null>("All");
 
   /**
