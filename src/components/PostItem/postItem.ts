@@ -6,9 +6,9 @@ export default function PostItem(posts: Post[]) {
       (post) => `
     <div class=${styles["post__item"]} data-category=${post.category}>
       <a class=${styles["post__item__link"]} href=${post.path}>
-        <div class=${styles["post__item__title"]}>
+        <h4 class=${styles["post__item__title"]}>
           ${post.title}
-        </div>
+        </h4>
         <p class=${styles["post__item__description"]}>
           ${post.description}
         </p>

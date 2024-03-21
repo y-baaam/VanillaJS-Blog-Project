@@ -1,12 +1,12 @@
 .post {
   width: 100%;
-  padding: 60px 15px 30px;
+  padding: 4rem 1rem 2rem;
 }
 .post__header {
-  margin-top: 40px;
+  margin-top: 2.5rem;
 }
 .post__emoji {
-  font-size: 80px;
+  font-size: 5rem;
 }
 .post__title {
 }

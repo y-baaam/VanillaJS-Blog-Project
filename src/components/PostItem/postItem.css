@@ -1,9 +1,9 @@
 .post__item {
-  padding: 16px;
+  padding: 1rem;
 }
 .post__item:hover {
   background-color: rgb(41, 41, 41);
-  border-radius: 10px;
+  border-radius: 0.6rem;
 }
 
 .post__item__link,
@@ -13,13 +13,12 @@
 }
 
 .post__item__title {
-  font-size: 18px;
-  margin-bottom: 8px;
+  margin-bottom: 0.5rem;
   font-family: "GmarketSansMedium";
 }
 .post__item__description {
-  font-size: 13px;
-  margin-bottom: 16px;
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
 }
 
 .post__item__bottom {
@@ -29,8 +28,8 @@
   justify-content: space-between;
 }
 .post__item__date {
-  font-size: 12px;
+  font-size: 0.75rem;
 }
 .post__item__category {
-  font-size: 12px;
+  font-size: 0.75rem;
 }
