@@ -1,5 +1,5 @@
 import styles from "./postItem.css";
-import { Post } from "../../api/posts";
+import { Post } from "@/api/posts";
 export default function PostItem(posts: Post[]) {
   return posts
     .map(

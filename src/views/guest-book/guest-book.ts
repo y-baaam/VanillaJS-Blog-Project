@@ -1,5 +1,5 @@
-import Layout from "../../components/Layout/layout";
-import utterances from "../../components/utterances/utterances";
+import Layout from "@comp/Layout/layout";
+import utterances from "@comp/utterances/utterances";
 import styles from "./guest-book.css";
 
 export default async function GuestBook() {

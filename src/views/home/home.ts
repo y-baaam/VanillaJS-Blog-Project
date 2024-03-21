@@ -1,6 +1,6 @@
-import Layout from "../../components/Layout/layout";
+import Layout from "@comp/Layout/layout";
 import styles from "./home.css";
-import { createRotatingText } from "../../util/rotatingText/rotatingText";
+import { createRotatingText } from "@/util/rotatingText/rotatingText";
 
 export default function Home() {
   const rotatingWords = ["송영범", "나나나", "오오오", "징징징"];
