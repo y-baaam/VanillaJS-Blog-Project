@@ -17,9 +17,14 @@ module.exports = merge(common, {
     // 이 설정은 새로고침이나 직접 URL 입력 시 404 오류 대신 index.html을 제공하여
     // JavaScript가 클라이언트 사이드에서 라우트를 처리할 수 있게 해줍니다.
     historyApiFallback: true,
-    static: {
-      directory: path.join(__dirname, "../public"),
-    },
+    static: [
+      {
+        directory: path.join(__dirname, "../public"),
+      },
+      {
+        directory: path.join(__dirname, "../public/content/posts"),
+      },
+    ],
     port: 8080,
   },
   output: {
