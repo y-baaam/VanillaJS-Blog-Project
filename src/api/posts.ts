@@ -13,7 +13,7 @@ export async function getFeaturedPublicPosts(): Promise<Post[]> {
 }
 
 export async function getAllPosts(): Promise<Post[]> {
-  const url = "../../content/posts.json";
+  const url = "/content/posts.json";
   try {
     const response = await fetch(url);
     if (!response.ok) {
