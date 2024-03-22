@@ -2,7 +2,7 @@ import Layout from "@comp/Layout";
 import styles from "./index.css";
 import PostItem from "@comp/PostItem";
 import { getFeaturedPublicPosts, Post } from "@/api/posts";
-import { State } from "@/util/state/state";
+import { State } from "@/util/state";
 
 export default async function Posts() {
   const posts: Post[] = await getFeaturedPublicPosts();
