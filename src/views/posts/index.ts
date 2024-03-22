@@ -1,6 +1,6 @@
-import Layout from "@comp/Layout/layout";
-import styles from "./posts.css";
-import PostItem from "@comp/PostItem/postItem";
+import Layout from "@comp/Layout";
+import styles from "./index.css";
+import PostItem from "@comp/PostItem";
 import { getFeaturedPublicPosts, Post } from "@/api/posts";
 import { State } from "@/util/state/state";
 

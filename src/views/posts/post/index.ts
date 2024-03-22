@@ -1,7 +1,7 @@
-import Layout from "@/components/Layout/layout";
-import styles from "./post.css";
+import Layout from "@comp/Layout";
+import styles from "./index.css";
 import markdownStyle from "/styles/markdown-style.css";
-import ErrorPage from "@views/error/error";
+import ErrorPage from "@views/error";
 import matter from "gray-matter";
 import * as marked from "marked";
 

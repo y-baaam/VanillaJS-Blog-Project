@@ -1,4 +1,4 @@
-import styles from "./postItem.css";
+import styles from "./index.css";
 import { Post } from "@/api/posts";
 export default function PostItem(posts: Post[]) {
   return posts

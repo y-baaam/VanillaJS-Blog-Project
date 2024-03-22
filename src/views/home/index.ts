@@ -1,5 +1,5 @@
-import Layout from "@comp/Layout/layout";
-import styles from "./home.css";
+import Layout from "@comp/Layout";
+import styles from "./index.css";
 import { createRotatingText } from "@/util/rotatingText/rotatingText";
 
 export default function Home() {

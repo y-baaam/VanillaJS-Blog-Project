@@ -1,6 +1,6 @@
-import Header from "../Header/header";
-import Footer from "../Footer/footer";
-import styles from "./layout.css";
+import Header from "@comp/Header";
+import Footer from "@comp/Footer";
+import styles from "./index.css";
 
 export default function Layout(htmlContent: string): HTMLElement {
   const layoutHTML = `
