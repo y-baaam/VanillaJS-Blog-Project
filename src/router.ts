@@ -1,5 +1,4 @@
 import Home from "@views/home";
-import About from "@views/about";
 import Posts from "@views/posts";
 import Post from "@views/posts/post";
 import GuestBook from "@views/guest-book";
@@ -9,7 +8,6 @@ type ViewFunction = () => HTMLElement | Promise<string | HTMLElement | void>;
 
 const routes: Record<string, ViewFunction> = {
   "/": Home,
-  "/about": About,
   "/post": Posts,
   "/post/:id": Post,
   "/guestBook": GuestBook,
