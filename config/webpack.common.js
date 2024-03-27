@@ -1,4 +1,3 @@
-const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
 const Dotenv = require("dotenv-webpack");
@@ -21,7 +20,6 @@ module.exports = {
       filename: "index.html",
       inject: "body",
     }),
-    new CssMinimizerPlugin(),
     new Dotenv(),
     new webpack.ProvidePlugin({
       Buffer: ["buffer", "Buffer"],

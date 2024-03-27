@@ -9,6 +9,9 @@ export default function Home() {
     <div>안녕하세요</div>
     <div class=${styles["rotatingText__wrapper"]}>
       <div id="rotatingText"></div>
+      <h1 class="text-3xl font-bold underline">
+        Hello world!
+      </h1>
     </div>
   </section>`;
   const layoutContent = Layout(content);
