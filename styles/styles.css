@@ -3,26 +3,6 @@ body {
   color: rgb(230, 230, 230);
   font-family: "GmarketSansLight";
 }
-/* .hoverUnderLine {
-  display: inline-block;
-  position: relative;
-}
-.hoverUnderLine::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  transform: scaleX(0);
-  height: 1px;
-  bottom: -1px;
-  left: 0;
-  background-color: black;
-  transform-origin: bottom right;
-  transition: transform 0.25s ease-out;
-}
-.hoverUnderLine:hover::after {
-  transform: scaleX(1);
-  transform-origin: bottom left;
-} */
 
 @font-face {
   font-family: "GmarketSansLight";
@@ -102,7 +82,12 @@ h6 {
 
 ul,
 ol {
-  padding-left: 40px;
+  padding-left: 2.5rem;
   margin-top: 0;
-  margin-bottom: 16px;
+  margin-bottom: 1rem;
+}
+
+a {
+  text-decoration: none;
+  color: #e6e6e6;
 }

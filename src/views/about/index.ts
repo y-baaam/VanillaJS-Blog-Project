@@ -1,5 +1,5 @@
-import Layout from "../../components/Layout/layout";
-import styles from "./about.css";
+import Layout from "@comp/Layout";
+import styles from "./index.css";
 
 export default function About() {
   const content = `

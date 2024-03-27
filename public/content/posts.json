@@ -1,18 +1,34 @@
 [
   {
     "title": "example1",
-    "description": "자바스크립트",
+    "description": "자바스크립트 symbol이란 무엇일까?",
     "date": "2023-12-31",
     "category": "JavaScript",
-    "path": "example1",
-    "featured": true
+    "path": "/post/example1",
+    "public": true
   },
   {
     "title": "example2",
-    "description": "리액트",
-    "date": "2024-01-31",
+    "description": "리액트 memoization에 관한 이야기",
+    "date": "2023-12-31",
     "category": "React",
-    "path": "example1",
-    "featured": true
+    "path": "/post/example2",
+    "public": true
+  },
+  {
+    "title": "example3",
+    "description": "자바스크립트 좋아요~",
+    "date": "2024-01-31",
+    "category": "JavaScript",
+    "path": "/post/example1",
+    "public": true
+  },
+  {
+    "title": "example4",
+    "description": "리액트 reconciliation에 대하여",
+    "date": "2024-02-31",
+    "category": "React",
+    "path": "/post/example2",
+    "public": true
   }
 ]

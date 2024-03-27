@@ -1,5 +1,5 @@
 import ErrorImg from "../public/images/404.png";
-import styles from "./error.css";
+import styles from "./index.css";
 
 export default function ErrorPage() {
   return `

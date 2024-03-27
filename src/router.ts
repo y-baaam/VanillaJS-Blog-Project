@@ -1,11 +1,11 @@
-import Home from "./views/home/home";
-import About from "./views/about/about";
-import Posts from "./views/posts/posts";
-import Post from "./views/posts/post/post";
-import GuestBook from "./views/guest-book/guest-book";
-import ErrorPage from "./views/error/error";
+import Home from "@views/home";
+import About from "@views/about";
+import Posts from "@views/posts";
+import Post from "@views/posts/post";
+import GuestBook from "@views/guest-book";
+import ErrorPage from "@views/error";
 
-type ViewFunction = () => string | HTMLElement | Promise<string | HTMLElement>;
+type ViewFunction = () => HTMLElement | Promise<string | HTMLElement | void>;
 
 const routes: Record<string, ViewFunction> = {
   "/": Home,

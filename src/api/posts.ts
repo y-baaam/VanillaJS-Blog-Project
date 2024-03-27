@@ -4,16 +4,16 @@ export type Post = {
   date: string;
   category: string;
   path: string;
-  featured: boolean;
+  public: boolean;
 };
 
-export async function getFeaturedPosts(): Promise<Post[]> {
+export async function getFeaturedPublicPosts(): Promise<Post[]> {
   const posts = await getAllPosts();
-  return posts.filter((post) => post.featured);
+  return posts.filter((post) => post.public);
 }
 
 export async function getAllPosts(): Promise<Post[]> {
-  const url = "../../content/posts.json";
+  const url = "/content/posts.json";
   try {
     const response = await fetch(url);
     if (!response.ok) {

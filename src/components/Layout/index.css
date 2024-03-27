@@ -1,11 +1,11 @@
 .layout {
-  width: 720px;
+  width: 45rem;
 
   display: flex;
   justify-content: center;
   align-items: center;
 
-  padding-bottom: 40px;
+  padding-bottom: 2.5rem;
   margin: 0 auto;
 }
 
