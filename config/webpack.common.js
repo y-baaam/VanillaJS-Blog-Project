@@ -10,6 +10,11 @@ module.exports = {
     fallback: {
       buffer: require.resolve("buffer/"),
     },
+    alias: {
+      "@": path.resolve(__dirname, "../src"),
+      "@comp": path.resolve(__dirname, "../src/components"),
+      "@views": path.resolve(__dirname, "../src/views"),
+    },
   },
   entry: path.resolve(__dirname, "../src/index.ts"),
 
@@ -62,6 +67,7 @@ module.exports = {
               modules: true,
             },
           },
+          { loader: "postcss-loader" },
         ],
       },
       {
