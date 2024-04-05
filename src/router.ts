@@ -8,8 +8,8 @@ type ViewFunction = () => HTMLElement | Promise<string | HTMLElement | void>;
 
 const routes: Record<string, ViewFunction> = {
   "/": Home,
-  "/post": Posts,
-  "/post/:id": Post,
+  "/posts": Posts,
+  "/posts/:id": Post,
   "/guestBook": GuestBook,
 };
 
