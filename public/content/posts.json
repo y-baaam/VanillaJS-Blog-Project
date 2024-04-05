@@ -4,7 +4,7 @@
     "description": "자바스크립트 symbol이란 무엇일까?",
     "date": "2023-12-31",
     "category": "JavaScript",
-    "path": "/post/example1",
+    "path": "/posts/example1",
     "public": true
   },
   {
@@ -12,7 +12,7 @@
     "description": "리액트 memoization에 관한 이야기",
     "date": "2023-12-31",
     "category": "React",
-    "path": "/post/example2",
+    "path": "/posts/example2",
     "public": true
   },
   {
@@ -20,7 +20,7 @@
     "description": "자바스크립트 좋아요~",
     "date": "2024-01-31",
     "category": "JavaScript",
-    "path": "/post/example1",
+    "path": "/posts/example1",
     "public": true
   },
   {
@@ -28,7 +28,47 @@
     "description": "리액트 reconciliation에 대하여",
     "date": "2024-02-31",
     "category": "React",
-    "path": "/post/example2",
+    "path": "/posts/example2",
+    "public": true
+  },
+  {
+    "title": "example5",
+    "description": "블로그 만들기",
+    "date": "2024-02-31",
+    "category": "example",
+    "path": "/posts/example5",
+    "public": true
+  },
+  {
+    "title": "example6",
+    "description": "example",
+    "date": "2024-02-31",
+    "category": "example2",
+    "path": "/posts/example6",
+    "public": true
+  },
+  {
+    "title": "example7",
+    "description": "example",
+    "date": "2024-02-31",
+    "category": "example3",
+    "path": "/posts/example7",
+    "public": true
+  },
+  {
+    "title": "example8",
+    "description": "example",
+    "date": "2024-02-31",
+    "category": "example4",
+    "path": "/posts/example8",
+    "public": true
+  },
+  {
+    "title": "example9",
+    "description": "example9",
+    "date": "2024-02-31",
+    "category": "example5",
+    "path": "/posts/example9",
     "public": true
   }
 ]
