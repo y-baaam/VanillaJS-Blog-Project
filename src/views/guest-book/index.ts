@@ -1,6 +1,6 @@
 import Layout from "@comp/Layout";
 import utterances from "@comp/utterances";
-import styles from "./index.css";
+import styles from "./index.module.css";
 
 export default async function GuestBook() {
   const content = `
