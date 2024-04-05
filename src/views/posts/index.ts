@@ -1,5 +1,5 @@
 import Layout from "@comp/Layout";
-import styles from "./posts-content/index.css";
+import styles from "./posts-content/index.module.css";
 
 import { getFeaturedPublicPosts, Post } from "@/api/posts";
 import { State } from "@/util/state";

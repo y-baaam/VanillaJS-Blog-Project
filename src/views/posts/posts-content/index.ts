@@ -1,4 +1,4 @@
-import styles from "./index.css";
+import styles from "./index.module.css";
 import { Post } from "@/api/posts";
 import { filterPostsByCategory } from "@/util/filterPostsByCategory";
 import PostItem from "@comp/PostItem";
