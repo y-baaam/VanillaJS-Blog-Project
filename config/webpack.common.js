@@ -58,7 +58,12 @@ module.exports = {
         type: "asset/source",
       },
       {
-        test: /\.css$/i,
+        test: /\.css$/,
+        exclude: /\.module\.css$/,
+        use: ["style-loader", "css-loader", "postcss-loader"],
+      },
+      {
+        test: /\.module\.css$/, // CSS 모듈 파일만 선택합니다.
         use: [
           { loader: "style-loader" },
           {
