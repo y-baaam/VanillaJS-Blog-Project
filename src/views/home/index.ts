@@ -1,5 +1,5 @@
 import Layout from "@comp/Layout";
-import styles from "./index.css";
+import styles from "./index.module.css";
 import { createRotatingText } from "@/util/rotatingText";
 
 export default function Home() {
@@ -7,9 +7,12 @@ export default function Home() {
   const content = `
   <section class=${styles["home"]}>
     <div>안녕하세요</div>
-    <div class=${styles["rotatingText__wrapper"]}>
-      <div id="rotatingText"></div>
-      <h1 class="text-3xl font-bold underline">
+    <div>
+      <div class="h-10">
+        <div class="absolute top-1" id="rotatingText">aaa</div>
+      </div>
+
+      <h1 class="text-title-bold text-red-800">
         Hello world!
       </h1>
     </div>

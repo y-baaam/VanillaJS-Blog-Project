@@ -1,6 +1,6 @@
 import Layout from "@comp/Layout";
-import styles from "./index.css";
-import markdownStyle from "/styles/markdown-style.css";
+import styles from "./index.module.css";
+import markdownStyle from "@/styles/markdown-style.module.css";
 import ErrorPage from "@views/error";
 import matter from "gray-matter";
 import * as marked from "marked";

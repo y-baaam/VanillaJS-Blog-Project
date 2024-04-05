@@ -1,5 +1,4 @@
-import ErrorImg from "../public/images/404.png";
-import styles from "./index.css";
+import styles from "./index.module.css";
 
 export default function ErrorPage() {
   return `
