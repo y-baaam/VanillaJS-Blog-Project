@@ -1,11 +1,10 @@
-import Header from "@comp/Header";
-import Footer from "@comp/Footer";
-import styles from "./index.module.css";
+import Header from "./Header";
+import Footer from "./Footer";
 
 export default function Layout(htmlContent: string): HTMLElement {
   const layoutHTML = `
-  <div class=${styles["layout"]}>
-    <div class=${styles["contents__container"]}>
+  <div class="w-default flex justify-center items-center pb-10 mx-auto">
+    <div class="w-full  md:w-medium mx-auto">
       ${Header()}
       ${htmlContent}
       ${Footer()}
