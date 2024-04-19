@@ -57,7 +57,9 @@ async function router(): Promise<void> {
   }
 
   if (!matched) {
-    appDiv.innerHTML = ErrorPage();
+    const errorPage = ErrorPage();
+    appDiv.innerHTML = "";
+    appDiv.appendChild(errorPage);
   }
 }
 
