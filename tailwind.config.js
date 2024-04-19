@@ -72,10 +72,10 @@ module.exports = {
           "1.125rem",
           { fontWeight: "600", lineHeight: "1.625rem" },
         ],
-        title: ["1.2rem", { fontWeight: "500", lineHeight: "1.85rem" }],
-        "title-bold": ["1.2rem", { fontWeight: "600", lineHeight: "1.85rem" }],
+        title: ["1.8rem", { fontWeight: "500", lineHeight: "1.85rem" }],
+        "title-bold": ["1.8rem", { fontWeight: "600", lineHeight: "1.85rem" }],
         "title-extra-bold": [
-          "1.2rem",
+          "1.8rem",
           { fontWeight: "700", lineHeight: "1.85rem" },
         ],
       },
@@ -86,5 +86,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [require("tailwind-scrollbar-hide")],
 };
