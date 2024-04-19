@@ -43,6 +43,7 @@
   "dependencies": {
     "buffer": "^6.0.3",
     "dotenv-webpack": "^8.0.1",
-    "highlight.js": "^11.9.0"
+    "highlight.js": "^11.9.0",
+    "tailwind-scrollbar-hide": "^1.1.7"
   }
 }
