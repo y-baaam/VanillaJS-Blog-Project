@@ -3,12 +3,14 @@ import Footer from "./Footer";
 
 export default function Layout(htmlContent: string): HTMLElement {
   const layoutHTML = `
-  <div class="w-default flex justify-center items-center pb-10 mx-auto">
-    <div class="w-full  md:w-medium mx-auto">
+  <div class="w-full flex flex-col justify-center items-center mx-auto bg-black-400 ">
+    <main class="w-full md:w-medium mx-auto pb-16 min-h-screen">
       ${Header()}
-      ${htmlContent}
-      ${Footer()}
-    </div>
+      <div class="py-8">
+        ${htmlContent}
+      </div>
+    </main>
+    ${Footer()}
   </div>
   `;
   const template = document.createElement("template");
