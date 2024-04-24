@@ -1,6 +1,6 @@
 function Header() {
   return `
-  <header class="w-full text-head font-GmarketSansMedium">
+  <header class="w-full md:text-head text-subHead font-GmarketSansBold">
     <div class="h-full flex flex-row justify-between items-center">
       <a href="/" data-link class="block text-center p-5">y-baam</a>
       <nav>

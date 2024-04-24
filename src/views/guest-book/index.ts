@@ -5,7 +5,7 @@ export default async function GuestBook() {
   const content = `
     <section>
       <div class="flex justify-center py-24">
-        <div class="text-title">자유롭게 방명록을 작성해주세요 🤗</div>
+        <div class="text-subTitle md:text-title">자유롭게 방명록을 작성해주세요 🤗</div>
       </div>
       <div id="utterances-container"></div>
     </section>

@@ -44,7 +44,7 @@ export function createRotatingText(
           }
         }
       },
-      isAdding ? 120 : 60
+      isAdding ? 80 : 80
     ); // 문자를 추가/제거하는 시간 간격
   }
 
