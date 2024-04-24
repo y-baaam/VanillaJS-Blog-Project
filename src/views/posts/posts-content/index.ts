@@ -21,18 +21,20 @@ export default function createPostsContent(
     return `<div class="cursor-pointer text-body" data-category=${v}>${v}</div>`;
   });
 
-  return `<section class="w-full">
-  <div class="flex flex-col justify-center text-center">
-    <div class="text-title-bold">${selectedCategory}</div>
-    <div class="p-3">${filteredPosts.length} posts</div>
-  </div>
-
-  <div class="w-full">
-    <div class="flex flex-row overflow-y-hidden gap-x-6 scrollbar-hide p-4 mb-3">
-      <div class="cursor-pointer text-body" data-category="All">All</div>
-      ${uniqueCategoriesMap.join("")}
+  return `
+  <section class="w-full">
+    <div class="flex flex-col justify-center text-center">
+      <div class="text-title-bold">${selectedCategory}</div>
+      <div class="p-3">${filteredPosts.length} posts</div>
     </div>
-    ${filteredPostItemsHtml}
-  </div>  
-</section>`;
+
+    <div class="w-full">
+      <div class="flex flex-row overflow-y-hidden gap-x-6 scrollbar-hide p-4 mb-3">
+        <div class="cursor-pointer text-body" data-category="All">All</div>
+        ${uniqueCategoriesMap.join("")}
+      </div>
+      ${filteredPostItemsHtml}
+    </div>  
+  </section>
+  `;
 }

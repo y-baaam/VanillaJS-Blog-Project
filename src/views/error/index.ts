@@ -2,13 +2,15 @@ import Layout from "@comp/Layout";
 
 export default function ErrorPage() {
   const content = `
-  <section>
-    <h1 class="absolute top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-title">
+  <section class="w-full text-subTitle-bold md:text-title">
+    <h1 class="text-center mt-32 mb-20">
       404 Not Found
       <div>페이지를 찾을 수 없습니다.</div>
-      <div onclick="history.back()" class="mt-10 p-4 text-black-100 bg-white-100 text-center text-title-bold">이전 페이지</div>
     </h1>
-    
+    <div class="flex flex-col w-full justify-center items-center">
+      <a href="/" class="w-96 text-center p-4 my-4 text-black-100 bg-white-100 cursor-pointer">홈으로</a>
+      <a onclick="history.back()" class="w-96 text-center p-4 my-4 text-black-100 bg-white-100 cursor-pointer">이전 페이지</a>
+    </div>
   </section>
   `;
 
