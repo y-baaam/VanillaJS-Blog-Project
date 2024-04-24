@@ -1,37 +1,65 @@
-import Home from "./views/home/home";
-import About from "./views/about/about";
-import Post from "./views/post/post";
-import GuestBook from "./views/guest-book/guest-book";
-import ErrorPage from "./views/error/error";
+import Home from "@views/home";
+import Posts from "@views/posts";
+import Post from "@views/posts/post";
+import GuestBook from "@views/guest-book";
+import ErrorPage from "@views/error";
 
-type ViewFunction = () => string | HTMLElement | Promise<string | HTMLElement>;
+type ViewFunction = () => HTMLElement | Promise<string | HTMLElement | void>;
 
-// routes 객체는 URL 경로와 이 경로에 대응하는 뷰 함수(Home, About, Post, GuestBook)를 매핑합니다.
 const routes: Record<string, ViewFunction> = {
   "/": Home,
-  "/about": About,
-  "/post": Post,
+  "/posts": Posts,
+  "/posts/:id": Post,
   "/guestBook": GuestBook,
 };
 
-function router(): void {
+const pathToRegex = (path: string): RegExp => {
+  return new RegExp(
+    "^" + path.replace(/\//g, "\\/").replace(/:\w+/g, "([^/]+)") + "$"
+  );
+};
+
+async function router(): Promise<void> {
   const path = window.location.pathname;
-  const viewFunction = routes[path];
+  let matched = false;
 
   // app은 SPA의 메인 콘텐츠를 동적으로 표시하는 데 사용됩니다.
   const appDiv = document.getElementById("app");
 
-  if (appDiv instanceof HTMLElement && viewFunction) {
-    const viewContent = viewFunction();
+  if (!appDiv) return;
 
-    // 문자열이면 innerHTML에 할당하고, HTMLElement이면 appendChild를 사용합니다
-    if (typeof viewContent === "string") {
-      appDiv.innerHTML = viewContent;
-    } else if (viewContent instanceof HTMLElement) {
-      appDiv.innerHTML = viewContent.outerHTML;
-    } else {
-      appDiv.innerHTML = `${ErrorPage()}`;
+  for (const [routePath, viewFunction] of Object.entries(routes)) {
+    const regex = pathToRegex(routePath);
+    const match = path.match(regex);
+    if (match) {
+      matched = true;
+
+      // URL에서 파라미터 추출
+      const params: string[] = match.slice(1);
+      let viewContent;
+
+      try {
+        viewContent = await viewFunction(...(params as []));
+      } catch (error) {
+        console.error("error", error);
+        viewContent = ErrorPage();
+      }
+
+      // 뷰 콘텐츠 렌더링
+      if (typeof viewContent === "string") {
+        appDiv.innerHTML = viewContent;
+      } else if (viewContent instanceof HTMLElement) {
+        appDiv.innerHTML = "";
+        appDiv.appendChild(viewContent);
+      }
+      break;
     }
+  }
+
+  if (!matched) {
+    const errorPage = ErrorPage();
+    appDiv.innerHTML = "";
+    appDiv.appendChild(errorPage);
   }
 }
 
