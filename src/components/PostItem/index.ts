@@ -1,11 +1,10 @@
-import styles from "./index.module.css";
 import { Post } from "@/api/posts";
 export default function PostItem(posts: Post[]) {
   return posts
     .map(
       (post) => `
-    <div class="p-4" data-category=${post.category}>
-      <a class=${styles["post__item__link"]} href=${post.path}>
+    <div class="p-4 hover:bg-black-200 rounded-lg" data-category=${post.category}>
+      <a class="no-underline text-white-200 visited:text-white-200" href=${post.path}>
         <h4 class="my-2 text-subTitle-bold">
           ${post.title}
         </h4>
