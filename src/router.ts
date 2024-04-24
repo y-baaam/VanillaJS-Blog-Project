@@ -1,5 +1,4 @@
 import Home from "@views/home";
-import About from "@views/about";
 import Posts from "@views/posts";
 import Post from "@views/posts/post";
 import GuestBook from "@views/guest-book";
@@ -9,9 +8,8 @@ type ViewFunction = () => HTMLElement | Promise<string | HTMLElement | void>;
 
 const routes: Record<string, ViewFunction> = {
   "/": Home,
-  "/about": About,
-  "/post": Posts,
-  "/post/:id": Post,
+  "/posts": Posts,
+  "/posts/:id": Post,
   "/guestBook": GuestBook,
 };
 
@@ -59,7 +57,9 @@ async function router(): Promise<void> {
   }
 
   if (!matched) {
-    appDiv.innerHTML = ErrorPage();
+    const errorPage = ErrorPage();
+    appDiv.innerHTML = "";
+    appDiv.appendChild(errorPage);
   }
 }
 

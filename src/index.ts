@@ -1,7 +1,7 @@
 import App from "./app";
 import router from "./router";
-import "/styles/reset.css";
-import "/styles/styles.css";
+import "@/styles/reset.module.css";
+import "@/styles/styles.css";
 
 import hljs from "highlight.js";
 import javascript from "highlight.js/lib/languages/javascript";

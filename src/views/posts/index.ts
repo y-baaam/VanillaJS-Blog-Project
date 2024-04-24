@@ -1,5 +1,4 @@
 import Layout from "@comp/Layout";
-import styles from "./posts-content/index.css";
 
 import { getFeaturedPublicPosts, Post } from "@/api/posts";
 import { State } from "@/util/state";
@@ -30,5 +29,5 @@ export default async function Posts() {
   categoryState.subscribe(render);
 
   render();
-  setupCategoryListeners({ styles, categoryState, render });
+  setupCategoryListeners({ categoryState, render });
 }

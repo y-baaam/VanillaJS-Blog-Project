@@ -1,15 +1,16 @@
-import Header from "@comp/Header";
-import Footer from "@comp/Footer";
-import styles from "./index.css";
+import Header from "./Header";
+import Footer from "./Footer";
 
 export default function Layout(htmlContent: string): HTMLElement {
   const layoutHTML = `
-  <div class=${styles["layout"]}>
-    <div class=${styles["contents__container"]}>
+  <div class="w-full flex flex-col justify-center items-center mx-auto bg-black-400">
+    <main class="w-3/4 md:w-medium mx-auto pb-16 min-h-screen">
       ${Header()}
-      ${htmlContent}
-      ${Footer()}
-    </div>
+      <div class="py-8">
+        ${htmlContent}
+      </div>
+    </main>
+    ${Footer()}
   </div>
   `;
   const template = document.createElement("template");

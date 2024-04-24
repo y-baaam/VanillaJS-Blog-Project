@@ -1,4 +1,3 @@
-const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
 const Dotenv = require("dotenv-webpack");
@@ -11,6 +10,11 @@ module.exports = {
     fallback: {
       buffer: require.resolve("buffer/"),
     },
+    alias: {
+      "@": path.resolve(__dirname, "../src"),
+      "@comp": path.resolve(__dirname, "../src/components"),
+      "@views": path.resolve(__dirname, "../src/views"),
+    },
   },
   entry: path.resolve(__dirname, "../src/index.ts"),
 
@@ -21,7 +25,6 @@ module.exports = {
       filename: "index.html",
       inject: "body",
     }),
-    new CssMinimizerPlugin(),
     new Dotenv(),
     new webpack.ProvidePlugin({
       Buffer: ["buffer", "Buffer"],
@@ -55,7 +58,12 @@ module.exports = {
         type: "asset/source",
       },
       {
-        test: /\.css$/i,
+        test: /\.css$/,
+        exclude: /\.module\.css$/,
+        use: ["style-loader", "css-loader", "postcss-loader"],
+      },
+      {
+        test: /\.module\.css$/, // CSS 모듈 파일만 선택합니다.
         use: [
           { loader: "style-loader" },
           {
@@ -64,6 +72,7 @@ module.exports = {
               modules: true,
             },
           },
+          { loader: "postcss-loader" },
         ],
       },
       {

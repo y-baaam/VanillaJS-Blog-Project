@@ -1,4 +1,3 @@
-import styles from "./index.css";
 import { Post } from "@/api/posts";
 import { filterPostsByCategory } from "@/util/filterPostsByCategory";
 import PostItem from "@comp/PostItem";
@@ -19,23 +18,23 @@ export default function createPostsContent(
   //중복된 카테고리 목록 필터링
   const uniqueCategories = [...new Set(posts.map((post) => post.category))];
   const uniqueCategoriesMap = uniqueCategories.map((v) => {
-    return `<div class=${styles["posts__category"]}  data-category=${v}>${v}</div>`;
+    return `<div class="cursor-pointer text-body" data-category=${v}>${v}</div>`;
   });
 
-  return `<section class=${styles["posts"]}>
-  <div class=${styles["posts__header"]}>
-    <div class=${styles["posts__header__title"]}>${selectedCategory}</div>
-    <div class=${styles["posts__header__num"]}>${
-    filteredPosts.length
-  } posts</div>
-  </div>
-
-  <div class=${styles["posts__body"]}>
-    <div class=${styles["posts__category-list"]}>
-      <div class=${styles["posts__category"]} data-category="All">All</div>
-      ${uniqueCategoriesMap.join("")}
+  return `
+  <section class="w-full">
+    <div class="flex flex-col justify-center text-center">
+      <div class="text-title-bold">${selectedCategory}</div>
+      <div class="p-3">${filteredPosts.length} posts</div>
     </div>
-    ${filteredPostItemsHtml}
-  </div>  
-</section>`;
+
+    <div class="w-full">
+      <div class="flex flex-row overflow-y-hidden gap-x-6 scrollbar-hide p-4 mb-3">
+        <div class="cursor-pointer text-body" data-category="All">All</div>
+        ${uniqueCategoriesMap.join("")}
+      </div>
+      ${filteredPostItemsHtml}
+    </div>  
+  </section>
+  `;
 }

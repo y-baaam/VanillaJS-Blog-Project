@@ -1,8 +1,8 @@
 ---
 emoji: 👩🏻‍💻
-title: "example2"
-date: "2024-01-31"
-categories: featured-category2
+title: "example9"
+date: "2024-04-05"
+categories: CSS
 ---
 
 # 예시 글입니다.

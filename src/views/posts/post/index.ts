@@ -1,6 +1,5 @@
 import Layout from "@comp/Layout";
-import styles from "./index.css";
-import markdownStyle from "/styles/markdown-style.css";
+import markdownStyle from "@/styles/markdown-style.module.css";
 import ErrorPage from "@views/error";
 import matter from "gray-matter";
 import * as marked from "marked";
@@ -41,12 +40,13 @@ export default async function Post(): Promise<string | HTMLElement> {
   });
 
   const content = `
-  <section class=${styles["post"]}>
-    <header class=${styles["post__header"]}>
-      <div class=${styles["post__emoji"]}>${frontMatter.emoji}</div>
-      <h1 class=${styles["post__title"]}>${frontMatter.title}</h1>
-      <div class=${styles["post__categories"]}>${frontMatter.categories}</div>
+  <section class="w-full pt-16 pr-4 pb-8 pl-4">
+  <div class="text-7xl">${frontMatter.emoji}</div>
+    <header class="mt-10">
+      <div class="text-cyan-600 p-2 mb-1 bg-black-100 rounded-2xl inline-block text-caption1-bold">${frontMatter.categories}</div>
+      <div class="text-title">${frontMatter.title}</div>
     </header>
+    <hr class="mt-8 mb-8 border-slate-700"/>
     <div class=${markdownStyle["markdown"]}>${rawHtml.innerHTML}</div>
   </section>`;
   return Layout(content);

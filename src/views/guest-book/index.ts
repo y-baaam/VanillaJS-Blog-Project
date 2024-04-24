@@ -1,14 +1,13 @@
 import Layout from "@comp/Layout";
 import utterances from "@comp/utterances";
-import styles from "./index.css";
 
 export default async function GuestBook() {
   const content = `
-    <section class=${styles["guest-book"]}>
-      <div class=${styles["guest-book__title"]}>
-        <div>자유롭게 방명록을 작성해주세요 🤗</div>
+    <section>
+      <div class="flex justify-center py-24">
+        <div class="text-subTitle md:text-title">자유롭게 방명록을 작성해주세요 🤗</div>
       </div>
-      <div id="utterances-container" ></div>
+      <div id="utterances-container"></div>
     </section>
   `;
 
