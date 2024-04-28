@@ -6,12 +6,23 @@ import ErrorPage from "@views/error";
 
 type ViewFunction = () => HTMLElement | Promise<string | HTMLElement | void>;
 
-const routes: Record<string, ViewFunction> = {
+const routes: Record<string, ViewFunction> = makeRoutes({
   "/": Home,
   "/posts": Posts,
   "/posts/:id": Post,
   "/guestBook": GuestBook,
-};
+});
+
+function makeRoutes(
+  routesOption: Record<string, ViewFunction>
+): Record<string, ViewFunction> {
+  let temp: ReturnType<typeof makeRoutes> = {};
+  for (let k in routesOption) {
+    temp[k] = routesOption[k];
+    if (k !== "/") temp[`${k}/`] = routesOption[k];
+  }
+  return temp;
+}
 
 const pathToRegex = (path: string): RegExp => {
   return new RegExp(
