@@ -87,6 +87,13 @@ module.exports = {
           filename: "images/[hash][ext][query]",
         },
       },
+      {
+        test: /\.(otf|ttf|woff|woff2)$/,
+        type: "asset/resource",
+        generator: {
+          filename: "fonts/[name][ext][query]",
+        },
+      },
     ],
   },
 
