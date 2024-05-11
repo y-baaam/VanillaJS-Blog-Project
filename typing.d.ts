@@ -17,3 +17,8 @@ declare module "*.json" {
   const value: any;
   export default value;
 }
+
+declare module "*.otf" {
+  const value: string;
+  export default value;
+}
