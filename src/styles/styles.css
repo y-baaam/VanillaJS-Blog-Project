@@ -10,18 +10,18 @@ body {
 
 @font-face {
   font-family: "GmarketSansLight";
-  src: url("/public/assets/fonts/GmarketSansLight.otf") format("opentype");
+  src: url("../../fonts/GmarketSansLight.otf") format("opentype");
   font-style: normal;
 }
 
 @font-face {
   font-family: "GmarketSansMedium";
-  src: url("/public/assets/fonts/GmarketSansMedium.otf") format("opentype");
+  src: url("../../fonts/GmarketSansMedium.otf") format("opentype");
   font-style: normal;
 }
 
 @font-face {
   font-family: "GmarketSansBold";
-  src: url("/public/assets/fonts/GmarketSansBold.otf") format("opentype");
+  src: url("../../fonts/GmarketSansBold.otf") format("opentype");
   font-style: normal;
 }
