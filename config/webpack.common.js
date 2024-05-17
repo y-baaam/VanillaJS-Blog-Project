@@ -1,6 +1,5 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
-const Dotenv = require("dotenv-webpack");
 const webpack = require("webpack");
 
 module.exports = {
@@ -25,7 +24,7 @@ module.exports = {
       filename: "index.html",
       inject: "body",
     }),
-    new Dotenv(),
+
     new webpack.ProvidePlugin({
       Buffer: ["buffer", "Buffer"],
     }),
