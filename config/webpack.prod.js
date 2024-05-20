@@ -22,7 +22,10 @@ module.exports = merge(common, {
     },
 
     new CopyWebpackPlugin({
-      patterns: [{ from: "public/sitemap.xml", to: "sitemap.xml" }],
+      patterns: [
+        { from: "public/sitemap.xml", to: "sitemap.xml" },
+        { from: "public/robots.txt", to: "robots.txt" },
+      ],
     }),
   ],
 });
