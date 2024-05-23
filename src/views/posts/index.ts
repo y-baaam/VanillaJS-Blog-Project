@@ -5,6 +5,7 @@ import { State } from "@/util/state";
 
 import { setupCategoryListeners } from "@/util/setupCategoryListeners";
 import createPostsContent from "./posts-content";
+import PostHeader from "@comp/PostHeader";
 
 export default async function Posts() {
   const posts: Post[] = await getFeaturedPublicPosts();
@@ -20,7 +21,10 @@ export default async function Posts() {
       layoutElement.innerHTML = "";
 
       // Layout 함수로부터 반환된 HTMLElement를 추가
-      const layoutContent = Layout(content);
+      const layoutContent = Layout(
+        content,
+        PostHeader(posts, selectedCategory)
+      );
       layoutElement.appendChild(layoutContent);
     } else {
       console.error("App container not found");

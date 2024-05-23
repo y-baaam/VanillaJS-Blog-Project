@@ -1,11 +1,16 @@
 import Layout from "@comp/Layout";
 import { createRotatingText } from "@/util/rotatingText";
+import { Post, getFeaturedPublicPosts } from "@/api/posts";
+import PostItem from "@/components/PostItem";
 
-export default function Home() {
-  const rotatingWords = ["Frontend", "JavaScript"];
+export default async function Home() {
+  const posts: Post[] = (await getFeaturedPublicPosts()).slice(0, 5);
+  const recentPosts = PostItem(posts);
+
+  const rotatingWords = ["Frontend", "JavaScript", "React"];
   const content = `
     <main>
-      <section class="flex justify-between flex-row md:text-title text-subTitle font-GmarketSansLight mt-32 mb-20">
+      <section class="flex justify-between flex-row md:text-title text-subTitle font-GmarketSansLight mt-20 mb-24">
         <div class="h-28 flex flex-col justify-between">
           <div>안녕하세요! 😀</div>
           <div class="w-full">
@@ -23,7 +28,8 @@ export default function Home() {
       </section>
 
       <section>
-        <div class="">Recent Posts</div>
+        <div class="p-2 mb-4 w-44 border-2 border-solid border-white text-subHead-bold">Recent Posts</div>
+        ${recentPosts}
       </section>
     </main>`;
   const layoutContent = Layout(content);
