@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  width: 100%;
+}
+
 body {
   background-color: #1c1c1c;
   color: rgb(230, 230, 230);
@@ -10,18 +14,18 @@ body {
 
 @font-face {
   font-family: "GmarketSansLight";
-  src: url("../../fonts/GmarketSansLight.otf") format("opentype");
+  src: url("../../public/fonts/GmarketSansLight.otf") format("opentype");
   font-style: normal;
 }
 
 @font-face {
   font-family: "GmarketSansMedium";
-  src: url("../../fonts/GmarketSansMedium.otf") format("opentype");
+  src: url("../../public/fonts/GmarketSansMedium.otf") format("opentype");
   font-style: normal;
 }
 
 @font-face {
   font-family: "GmarketSansBold";
-  src: url("../../fonts/GmarketSansBold.otf") format("opentype");
+  src: url("../../public/fonts/GmarketSansBold.otf") format("opentype");
   font-style: normal;
 }
