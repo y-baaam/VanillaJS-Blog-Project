@@ -23,28 +23,15 @@ module.exports = merge(common, {
 
     new CopyWebpackPlugin({
       patterns: [
-        { from: "public/content/posts", to: "content/posts" },
-        { from: "public/sitemap.xml", to: "sitemap.xml" },
-        { from: "public/robots.txt", to: "robots.txt" },
-        { from: "public/images", to: "images" },
+        { from: "public", to: "", globOptions: { ignore: ["**/index.html"] } },
+        // { from: "public/content/posts", to: "content/posts" },
+        // { from: "public/sitemap.xml", to: "sitemap.xml" },
+        // { from: "public/robots.txt", to: "robots.txt" },
       ],
     }),
   ],
   output: {
     path: path.resolve(__dirname, "../dist"),
     publicPath: "/",
-  },
-
-  devServer: {
-    historyApiFallback: true,
-    static: [
-      {
-        directory: path.join(__dirname, "../public"),
-      },
-      {
-        directory: path.join(__dirname, "../public/content/posts"),
-      },
-    ],
-    port: 8080,
   },
 });
