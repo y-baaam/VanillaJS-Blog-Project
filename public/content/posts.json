@@ -10,7 +10,7 @@
   {
     "title": "IIFE - 즉시 실행 함수",
     "description": "즉시 실행 함수 표현식은 정의되자마자 즉시 실행되는 JavaScript 함수를 말합니다.",
-    "date": "2024-06-02",
+    "date": "2024-06-03",
     "category": "JavaScript",
     "path": "/posts/2-IIFE",
     "public": true
