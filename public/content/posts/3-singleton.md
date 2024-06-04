@@ -1,3 +1,10 @@
+---
+emoji: "☝️"
+title: "Singleton Pattern 이해하기"
+date: "2024-06-05"
+categories: JavaScript
+---
+
 # Singleton Pattern
 싱글톤 패턴은 디자인 패턴들 중 이해하기 쉬운 패턴 중 하나입니다.
 
