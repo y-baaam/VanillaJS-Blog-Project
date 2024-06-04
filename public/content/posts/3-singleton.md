@@ -41,7 +41,7 @@ categories: Design-Pattern
 3. Public 정적 메서드: 외부에서 유일한 인스턴스에 접근할 수 있도록 public 정적 메서드를 제공
 
 ## 싱글톤 패턴의 구현 방법
-#### 1. 클래스 정의
+### 1. 클래스 정의
 ```jsx
 class Singleton {
   constructor() {
@@ -49,7 +49,7 @@ class Singleton {
   }
 }
 ```
-#### 2. 정적 인스턴스 변수 선언
+### 2. 정적 인스턴스 변수 선언
 ```jsx
 class Singleton {
   constructor() {
@@ -60,7 +60,7 @@ class Singleton {
 }
 ```
 
-#### 3. 인스턴스 반환 메서드 구현
+### 3. 인스턴스 반환 메서드 구현
 ```jsx
 class Singleton {
     constructor() {
@@ -78,7 +78,7 @@ class Singleton {
 }
 ```
 
-#### 4. 사용 예시
+### 4. 사용 예시
 싱글톤 인스턴스에 접근하기 위해 getInstance 메서드를 사용합니다. 이 방법을 통해 어디서든지 동일한 인스턴스에 접근할 수 있습니다.
 
 ```jsx
