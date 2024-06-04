@@ -1,8 +1,8 @@
 ---
-emoji: "☝️"
+emoji: "☀️"
 title: "Singleton Pattern 이해하기"
 date: "2024-06-05"
-categories: JavaScript
+categories: Design-Pattern
 ---
 
 # Singleton Pattern
