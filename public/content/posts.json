@@ -14,5 +14,13 @@
     "category": "JavaScript",
     "path": "/posts/2-IIFE",
     "public": true
+  },
+  {
+    "title": "Singleton Pattern 이해하기",
+    "description": "싱글톤 패턴은 단 하나의 유일한 객체를 생성하여, 메모리를 효율적으로 관리하기 위한 디자인 패턴입니다.",
+    "date": "2024-06-05",
+    "category": "JavaScript",
+    "path": "/posts/3-singleton",
+    "public": true
   }
 ]
