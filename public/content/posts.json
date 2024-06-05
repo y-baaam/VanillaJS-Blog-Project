@@ -22,5 +22,13 @@
     "category": "Design-Pattern",
     "path": "/posts/3-singleton",
     "public": true
+  },
+  {
+    "title": "React-Memoization",
+    "description": "메모이제이션(memoization)은 불필요한 렌더링을 방지하고, 성능을 최적화하기 위한 기술입니다. 주로 중복 연산을 피하기 위해 사용되며, 특히 재귀 함수나 연산이 많이 드는 계산에서 유용합니다.",
+    "date": "2024-06-06",
+    "category": "React",
+    "path": "/posts/4-memoization",
+    "public": true
   }
 ]
