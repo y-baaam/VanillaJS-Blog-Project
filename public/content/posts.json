@@ -30,5 +30,13 @@
     "category": "React",
     "path": "/posts/4-memoization",
     "public": true
+  },
+  {
+    "title": "useReducer를 사용해보자!",
+    "description": "리액트(React)의 useReducer는 상태 관리와 상태 업데이트를 다루는 React 훅 중 하나입니다. 이 훅은 주로 복잡한 상태 관리 로직을 다루거나 여러 컴포넌트 간에 상태를 공유할 때 사용됩니다.",
+    "date": "2024-06-18",
+    "category": "React",
+    "path": "/posts/5-useReducer",
+    "public": true
   }
 ]
