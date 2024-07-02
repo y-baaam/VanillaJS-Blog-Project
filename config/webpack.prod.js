@@ -10,23 +10,20 @@ module.exports = merge(common, {
 
   plugins: [
     // sitemap 생성 플러그인
-    {
-      apply: (compiler) => {
-        compiler.hooks.beforeRun.tap("GenerateSitemapPlugin", () => {
-          execSync(
-            "pnpm exec ts-node " +
-              path.resolve(__dirname, "../src/util/generateSitemap/index.ts")
-          );
-        });
-      },
-    },
+    // {
+    //   apply: (compiler) => {
+    //     compiler.hooks.beforeRun.tap("GenerateSitemapPlugin", () => {
+    //       execSync(
+    //         "pnpm exec ts-node " +
+    //           path.resolve(__dirname, "../src/util/generateSitemap/index.ts")
+    //       );
+    //     });
+    //   },
+    // },
 
     new CopyWebpackPlugin({
       patterns: [
         { from: "public", to: "", globOptions: { ignore: ["**/index.html"] } },
-        // { from: "public/content/posts", to: "content/posts" },
-        // { from: "public/sitemap.xml", to: "sitemap.xml" },
-        // { from: "public/robots.txt", to: "robots.txt" },
       ],
     }),
   ],
