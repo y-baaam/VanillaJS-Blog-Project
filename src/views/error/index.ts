@@ -1,6 +1,7 @@
 import Layout from "@comp/Layout";
 
 export default function ErrorPage() {
+  document.title = `영범 블로그 | 404 Not Found`;
   const content = `
   <section class="w-full text-subTitle-bold md:text-title">
     <h1 class="text-center mt-32 mb-20">
