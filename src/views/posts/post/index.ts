@@ -38,6 +38,8 @@ export default async function Post(): Promise<string | HTMLElement> {
     hljs.highlightElement(block as HTMLElement);
   });
 
+  document.title = `영범 블로그 | ${frontMatter.title}`;
+
   const content = `
   <section class="w-full p-4">
   <div class="text-7xl">${frontMatter.emoji}</div>
