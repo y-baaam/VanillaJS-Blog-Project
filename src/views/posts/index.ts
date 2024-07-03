@@ -8,6 +8,7 @@ import createPostsContent from "./posts-content";
 import PostHeader from "@comp/PostHeader";
 
 export default async function Posts() {
+  document.title = `영범 블로그 | Posts`;
   const posts: Post[] = await getFeaturedPublicPosts();
   const categoryState = new State<string | null>("All");
 

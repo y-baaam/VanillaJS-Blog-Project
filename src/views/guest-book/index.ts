@@ -2,6 +2,7 @@ import Layout from "@comp/Layout";
 import utterances from "@comp/utterances";
 
 export default async function GuestBook() {
+  document.title = `영범 블로그 | Guestbook`;
   const content = `
     <section>
       <div class="flex justify-center py-24">

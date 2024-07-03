@@ -24,9 +24,6 @@ module.exports = merge(common, {
     new CopyWebpackPlugin({
       patterns: [
         { from: "public", to: "", globOptions: { ignore: ["**/index.html"] } },
-        // { from: "public/content/posts", to: "content/posts" },
-        // { from: "public/sitemap.xml", to: "sitemap.xml" },
-        // { from: "public/robots.txt", to: "robots.txt" },
       ],
     }),
   ],
