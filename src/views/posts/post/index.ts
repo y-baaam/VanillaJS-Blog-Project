@@ -38,6 +38,24 @@ export default async function Post(): Promise<string | HTMLElement> {
     hljs.highlightElement(block as HTMLElement);
   });
 
+  // 이미지 Lazy Loading 및 애니메이션 적용
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const img = entry.target as HTMLImageElement;
+        img.classList.remove("opacity-0");
+        img.classList.add("opacity-100");
+        observer.unobserve(img);
+      }
+    });
+  });
+
+  rawHtml.querySelectorAll("img").forEach((img) => {
+    img.setAttribute("loading", "lazy");
+    img.classList.add("opacity-0", "transition-opacity", "duration-1000");
+    observer.observe(img);
+  });
+
   document.title = `영범 블로그 | ${frontMatter.title}`;
 
   const content = `
@@ -51,5 +69,12 @@ export default async function Post(): Promise<string | HTMLElement> {
     <hr class="mt-6 mb-6 border-y-gray-700"/>
     <div class=${markdownStyle["markdown"]}>${rawHtml.innerHTML}</div>
   </section>`;
-  return Layout(content);
+  const layoutElement = Layout(content) as HTMLElement;
+  document.body.appendChild(layoutElement);
+
+  layoutElement.querySelectorAll("img").forEach((img) => {
+    observer.observe(img);
+  });
+
+  return layoutElement;
 }
