@@ -63,13 +63,6 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ap-northeast-2
 
-      - name: Deploy to Amplify
-        run: |
-          aws amplify start-deployment \
-            --app-id ${{ secrets.AMPLIFY_APP_ID }} \
-            --branch-name ${{ secrets.AMPLIFY_BRANCH }} \
-            --source-url https://github.com/your-username/VanillaJS-Blog-Project/archive/refs/heads/main.zip
-
       - name: Get Lambda Function Name
         id: get-lambda
         run: |
