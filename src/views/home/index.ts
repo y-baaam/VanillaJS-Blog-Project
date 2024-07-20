@@ -4,7 +4,6 @@ import { Post, getFeaturedPublicPosts } from "@/api/posts";
 import PostItem from "@/components/PostItem";
 
 export default async function Home() {
-  console.log("test");
   document.title = `영범 블로그`;
   const posts: Post[] = (await getFeaturedPublicPosts()).slice(0, 5);
   const recentPosts = PostItem(posts);
