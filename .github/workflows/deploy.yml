@@ -1,0 +1,90 @@
+name: CI/CD for Amplify Project
+
+on:
+  push:
+    branches:
+      - main
+
+  workflow_dispatch:
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18.x]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Cache node modules
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Set up Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install Dependencies
+        run: pnpm install
+
+      - name: Run tests
+        run: pnpm run test
+
+  deploy:
+    needs: build-and-test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install Dependencies
+        run: pnpm install
+
+      - name: Build project
+        run: pnpm run build
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ap-northeast-2
+
+      - name: Get Lambda Function Name
+        id: get-lambda
+        run: |
+          LAMBDA_NAME=$(aws amplify list-backend-environments --app-id ${{ secrets.AMPLIFY_APP_ID }} --query "backendEnvironments[?environmentName=='${{ secrets.AMPLIFY_BRANCH }}'].deployedResources[?resourceType=='AWS::Lambda::Function'].resourceName" --output text)
+          echo "Lambda Function Name: $LAMBDA_NAME"
+          echo "::set-output name=lambda_name::$LAMBDA_NAME"
+
+      - name: Update Provisioned Concurrency
+        run: |
+          aws lambda put-provisioned-concurrency-config \
+            --function-name ${{ steps.get-lambda.outputs.lambda_name }} \
+            --qualifier $LATEST \
+            --provisioned-concurrent-executions 5
+
+      - name: Enable CloudWatch Logs
+        run: |
+          aws logs create-log-group --log-group-name /aws/lambda/${{ steps.get-lambda.outputs.lambda_name }} || true
+          aws logs create-log-stream --log-group-name /aws/lambda/${{ steps.get-lambda.outputs.lambda_name }} --log-stream-name my-log-stream || true
+
+      - name: Configure Sentry
+        run: |
+          sentry-cli releases new $GITHUB_SHA
+          sentry-cli releases set-commits $GITHUB_SHA --auto
+          sentry-cli releases finalize $GITHUB_SHA
+          sentry-cli releases deploys $GITHUB_SHA new -e production
