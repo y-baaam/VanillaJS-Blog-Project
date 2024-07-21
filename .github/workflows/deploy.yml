@@ -73,11 +73,15 @@ jobs:
           echo "Lambda Function Name: $LAMBDA_NAME"
           echo "::set-output name=lambda_name::$LAMBDA_NAME"
 
+      - name: Check Lambda Function Name
+        run: |
+          echo "Lambda Function Name: ${{ steps.get-lambda.outputs.lambda_name }}"
+
       - name: Update Provisioned Concurrency
         run: |
           aws lambda put-provisioned-concurrency-config \
             --function-name ${{ steps.get-lambda.outputs.lambda_name }} \
-            --qualifier $LATEST \
+            --qualifier \$LATEST \
             --provisioned-concurrent-executions 5
 
       - name: Enable CloudWatch Logs
