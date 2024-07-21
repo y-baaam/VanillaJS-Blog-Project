@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - development
 
   workflow_dispatch:
 
@@ -78,16 +79,21 @@ jobs:
           echo "Lambda Function Name: ${{ steps.get-lambda.outputs.lambda_name }}"
 
       - name: Update Provisioned Concurrency
+        env:
+          LAMBDA_NAME: ${{ steps.get-lambda.outputs.lambda_name }}
         run: |
+          echo "Updating provisioned concurrency for function: $LAMBDA_NAME"
           aws lambda put-provisioned-concurrency-config \
-            --function-name ${{ steps.get-lambda.outputs.lambda_name }} \
-            --qualifier \$LATEST \
+            --function-name "$LAMBDA_NAME" \
+            --qualifier LATEST \
             --provisioned-concurrent-executions 5
 
       - name: Enable CloudWatch Logs
+        env:
+          LAMBDA_NAME: ${{ steps.get-lambda.outputs.lambda_name }}
         run: |
-          aws logs create-log-group --log-group-name /aws/lambda/${{ steps.get-lambda.outputs.lambda_name }} || true
-          aws logs create-log-stream --log-group-name /aws/lambda/${{ steps.get-lambda.outputs.lambda_name }} --log-stream-name my-log-stream || true
+          aws logs create-log-group --log-group-name /aws/lambda/$LAMBDA_NAME || true
+          aws logs create-log-stream --log-group-name /aws/lambda/$LAMBDA_NAME --log-stream-name my-log-stream || true
 
       - name: Configure Sentry
         run: |
