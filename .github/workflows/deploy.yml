@@ -37,15 +37,18 @@ jobs:
 
       - name: Set up pnpm global bin directory
         run: |
-          mkdir -p ~/.pnpm-global
-          pnpm config set global-bin-dir ~/.pnpm-global
-          echo ~/.pnpm-global >> $GITHUB_PATH
+          mkdir -p $HOME/.pnpm-global
+          pnpm config set global-bin-dir $HOME/.pnpm-global
+          echo $HOME/.pnpm-global >> $GITHUB_PATH
 
       - name: Install Dependencies
         run: pnpm install
 
       - name: Install Amplify CLI
         run: pnpm add -g @aws-amplify/cli
+
+      - name: Pull Amplify Environment
+        run: amplify pull --appId ${{ secrets.AMPLIFY_APP_ID }} --envName ${{ secrets.AMPLIFY_BRANCH }} --yes
 
       - name: Build project
         run: pnpm run build
