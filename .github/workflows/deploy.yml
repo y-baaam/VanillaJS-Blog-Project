@@ -39,7 +39,7 @@ jobs:
         run: |
           mkdir -p ~/.pnpm-global
           pnpm config set global-bin-dir ~/.pnpm-global
-          echo "::add-path::~/.pnpm-global"
+          echo ~/.pnpm-global >> $GITHUB_PATH
 
       - name: Install Dependencies
         run: pnpm install
