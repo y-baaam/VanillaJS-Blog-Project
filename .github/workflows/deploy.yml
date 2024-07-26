@@ -39,7 +39,7 @@ jobs:
         run: |
           mkdir -p $HOME/.pnpm-global
           pnpm config set global-bin-dir $HOME/.pnpm-global
-          echo $HOME/.pnpm-global >> $GITHUB_PATH
+          echo "$HOME/.pnpm-global" >> $GITHUB_PATH
 
       - name: Install Dependencies
         run: pnpm install
@@ -47,18 +47,18 @@ jobs:
       - name: Install Amplify CLI
         run: pnpm add -g @aws-amplify/cli
 
-      - name: Pull Amplify Environment
-        run: amplify pull --appId ${{ secrets.AMPLIFY_APP_ID }} --envName ${{ secrets.AMPLIFY_BRANCH }} --yes
-
-      - name: Build project
-        run: pnpm run build
-
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ap-northeast-2
+
+      - name: Pull Amplify Environment
+        run: amplify pull --appId ${{ secrets.AMPLIFY_APP_ID }} --envName ${{ secrets.AMPLIFY_BRANCH }} --yes --amplify "{\"envName\":\"${{ secrets.AMPLIFY_BRANCH }}\"}" --frontend "{\"frontend\":\"javascript\",\"framework\":\"none\"}" --providers "{\"awscloudformation\":{\"configLevel\":\"project\",\"useProfile\":false,\"accessKeyId\":\"${{ secrets.AWS_ACCESS_KEY_ID }}\",\"secretAccessKey\":\"${{ secrets.AWS_SECRET_ACCESS_KEY }}\",\"region\":\"ap-northeast-2\"}}"
+
+      - name: Build project
+        run: pnpm run build
 
       - name: Deploy to Amplify
         run: amplify publish
