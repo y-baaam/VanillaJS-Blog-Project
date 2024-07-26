@@ -35,6 +35,12 @@ jobs:
       - name: Install pnpm
         run: npm install -g pnpm
 
+      - name: Set up pnpm global bin directory
+        run: |
+          mkdir -p ~/.pnpm-global
+          pnpm config set global-bin-dir ~/.pnpm-global
+          echo "::add-path::~/.pnpm-global"
+
       - name: Install Dependencies
         run: pnpm install
 
