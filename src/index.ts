@@ -30,3 +30,4 @@ document.body.addEventListener("click", (e: MouseEvent) => {
 });
 
 router();
+console.log("test");
