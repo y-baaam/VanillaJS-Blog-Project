@@ -1,6 +1,8 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
 const webpack = require("webpack");
+const BundleAnalyzerPlugin =
+  require("webpack-bundle-analyzer").BundleAnalyzerPlugin; // 번들의 내용 시각화하여 분석할 수 있게 해주는 도구
 
 module.exports = {
   mode: "development",
@@ -28,6 +30,8 @@ module.exports = {
     new webpack.ProvidePlugin({
       Buffer: ["buffer", "Buffer"],
     }),
+
+    new BundleAnalyzerPlugin(),
   ],
   module: {
     rules: [
