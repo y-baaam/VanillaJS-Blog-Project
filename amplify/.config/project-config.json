@@ -1,4 +1,7 @@
 {
+  "providers": [
+    "awscloudformation"
+  ],
   "projectName": "blog",
   "version": "3.1",
   "frontend": "javascript",
@@ -7,11 +10,8 @@
     "config": {
       "SourceDir": "src",
       "DistributionDir": "dist",
-      "BuildCommand": "npm run-script build",
-      "StartCommand": "npm run-script start"
+      "BuildCommand": "pnpm run deploy",
+      "StartCommand": "pnpm run start"
     }
-  },
-  "providers": [
-    "awscloudformation"
-  ]
+  }
 }
