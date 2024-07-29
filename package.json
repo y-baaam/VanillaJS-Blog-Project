@@ -26,6 +26,7 @@
     "gray-matter": "^4.0.3",
     "html-loader": "^4.2.0",
     "html-webpack-plugin": "^5.5.4",
+    "image-webpack-loader": "^8.1.0",
     "marked": "^11.2.0",
     "mini-css-extract-plugin": "^2.7.6",
     "postcss": "^8.4.38",
