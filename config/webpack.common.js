@@ -66,7 +66,7 @@ module.exports = {
         use: ["style-loader", "css-loader", "postcss-loader"],
       },
       {
-        test: /\.module\.css$/, // CSS 모듈 파일만 선택합니다.
+        test: /\.module\.css$/,
         use: [
           { loader: "style-loader" },
           {
