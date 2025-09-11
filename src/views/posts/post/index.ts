@@ -62,7 +62,7 @@ export default async function Post(): Promise<string | HTMLElement> {
   <section class="w-full p-4">
   <div class="text-7xl">${frontMatter.emoji}</div>
     <header class="mt-4">
-      <div class="text-white-400 mb-2 bg-black-100 p-2 rounded-2xl inline-block text-caption1-bold">${frontMatter.categories}</div>
+      <div class="text-white-400 rounded-2xl inline-block text-body-bold font-GmarketSansMedium">${frontMatter.categories}</div>
       <div class="text-title mt-2">${frontMatter.title}</div>
       <div class="text-white-400 text-caption2-bold pt-2">${frontMatter.date}</div>
     </header>

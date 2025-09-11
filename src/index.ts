@@ -17,8 +17,7 @@ window.addEventListener("popstate", router);
 
 new App(document.querySelector("app"));
 
-// 이 코드는 페이지 내의 모든 클릭 이벤트를 감시하고, data-link 속성을 가진 요소가 클릭될 때 기본 링크 동작을 방지한 후 pushState를 사용하여 URL을 변경하고, router 함수를 호출합니다.
-// 이로써 페이지 전환 시 페이지 로딩 없이 URL을 변경하고 콘텐츠를 동적으로 업데이트할 수 있습니다.
+// data-link 속성을 가진 요소가 클릭될 때 기본 링크 동작을 방지한 후 pushState를 사용하여 URL을 변경하고, router 함수를 호출합니다.
 
 document.body.addEventListener("click", (e: MouseEvent) => {
   const target = e.target as HTMLElement;
@@ -30,4 +29,3 @@ document.body.addEventListener("click", (e: MouseEvent) => {
 });
 
 router();
-console.log("test");
