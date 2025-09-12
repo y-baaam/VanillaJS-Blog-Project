@@ -2,12 +2,29 @@ version: 1
 frontend:
   phases:
     preBuild:
-      commands: []
+      commands:
+        - npm install -g pnpm
+        - pnpm install
     build:
-      commands: []
+      commands:
+        - pnpm run build
+        - mv ./dist/index.html ./dist/index2.html
+        - cp -r ./public/* ./dist/
+        - rm ./dist/index.html
+        - mv ./dist/index2.html ./dist/index.html
+        - rm ./public/sitemap.xml
   artifacts:
-    baseDirectory: public
+    baseDirectory: dist
     files:
       - "**/*"
   cache:
-    paths: []
+    paths:
+      - node_modules/**/*
+      - .pnpm-store/**/*
+customHeaders:
+  - pattern: "**/*"
+    headers:
+      - key: "X-Frame-Options"
+        value: "DENY"
+      - key: "X-Content-Type-Options"
+        value: "nosniff"
