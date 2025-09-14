@@ -7,7 +7,7 @@ export default async function Home() {
   document.title = `영범 블로그`;
   const posts: Post[] = (await getFeaturedPublicPosts()).slice(0, 5);
   const recentPosts = PostItem(posts);
-  const rotatingWords = ["Frontend", "JavaScript", "React"];
+  const rotatingWords = ["Frontend", "JavaScript", "React", "Explore"];
   const content = `
     <main>
       <section class="flex justify-between flex-row md:text-title text-subTitle font-GmarketSansLight mt-20 mb-24">
@@ -23,7 +23,7 @@ export default async function Home() {
         <div class="h-28 flex flex-col justify-between text-subTitle">
           <a href="https://github.com/y-baaam" class="">github</a>
           <a href="https://www.linkedin.com/in/young-beom-song/" class="">linkedIn</a>
-          <a href="https://docs.google.com/document/d/1SeWavGWvQ-pnENrYH4lW4BUPxzhawPvgNx0F3UWYiCs/edit?usp=sharing" class="">resume</a>
+          <a href="https://www.rallit.com/resumes/52341@dudqja3674/%EC%86%A1%EC%98%81%EB%B2%94" class="">resume</a>
         </div>
       </section>
 
