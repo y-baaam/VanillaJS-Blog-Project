@@ -15,7 +15,7 @@ hljs.registerLanguage("html", html);
 
 window.addEventListener("popstate", router);
 
-new App(document.querySelector("app"));
+new App(document.getElementById("app"));
 
 // data-link 속성을 가진 요소가 클릭될 때 기본 링크 동작을 방지한 후 pushState를 사용하여 URL을 변경하고, router 함수를 호출합니다.
 

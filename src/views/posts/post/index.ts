@@ -11,7 +11,24 @@ export default async function Post(): Promise<string | HTMLElement> {
   const path = window.location.pathname;
   const postId = path.split("/").pop(); // URL의 마지막 부분을 postId로 사용합니다.
 
-  const postContentURL = `/content/posts/${postId}.md`; // 서버 상의 실제 경로를 사용합니다.
+  // posts.json에서 올바른 파일명을 찾기
+  let postContentURL: string;
+  try {
+    const postsResponse = await fetch("/content/posts.json");
+    const posts = await postsResponse.json();
+    const post = posts.find((p: any) => p.path === path);
+
+    if (post) {
+      // path에서 파일명 추출 (예: "/posts/1-compile" -> "1-compile")
+      const fileName = post.path.split("/").pop();
+      postContentURL = `/content/posts/${fileName}.md`;
+    } else {
+      throw new Error(`Post not found for path: ${path}`);
+    }
+  } catch (error) {
+    console.error("Failed to load posts.json", error);
+    return ErrorPage();
+  }
 
   let postContent;
   try {
