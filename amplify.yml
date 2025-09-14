@@ -28,3 +28,7 @@ customHeaders:
         value: "DENY"
       - key: "X-Content-Type-Options"
         value: "nosniff"
+redirects:
+  - source: "/<*>"
+    target: "/index.html"
+    status: "200"
