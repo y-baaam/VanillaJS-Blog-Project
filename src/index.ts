@@ -1,5 +1,3 @@
-"use strict";
-
 import App from "./app";
 import router from "./router";
 import "@/styles/reset.module.css";
@@ -13,17 +11,41 @@ hljs.registerLanguage("javascript", javascript);
 hljs.registerLanguage("css", css);
 hljs.registerLanguage("html", html);
 
-window.addEventListener("popstate", router);
+new App(document.getElementById("app")!);
 
-new App(document.getElementById("app"));
+// 끝 슬래시 제거
+const normalizePath = (pathname: string) => {
+  if (pathname === "/") return "/";
+  return pathname.replace(/\/+$/, "");
+};
 
-// data-link 속성을 가진 요소가 클릭될 때 기본 링크 동작을 방지한 후 pushState를 사용하여 URL을 변경하고, router 함수를 호출합니다.
+// 최초 진입 시 정규화 (히스토리 오염 방지: replaceState)
+(() => {
+  const p = normalizePath(location.pathname);
+  if (p !== location.pathname)
+    history.replaceState(null, "", p + location.search + location.hash);
+})();
 
-document.body.addEventListener("click", (e: MouseEvent) => {
-  const target = e.target as HTMLElement;
-  if (e.target instanceof HTMLAnchorElement && target.matches("[data-link]")) {
-    e.preventDefault();
-    history.pushState(null, "", e.target.href);
+window.addEventListener("popstate", () => {
+  router();
+});
+
+document.addEventListener("click", (e: MouseEvent) => {
+  const a = (e.target as HTMLElement).closest<HTMLAnchorElement>(
+    "a[data-link]"
+  );
+  if (!a) return;
+
+  if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || a.target === "_blank")
+    return;
+
+  e.preventDefault();
+
+  const url = new URL(a.getAttribute("href")!, location.origin);
+  const nextPath = normalizePath(url.pathname);
+
+  if (nextPath !== location.pathname || url.search || url.hash) {
+    history.pushState(null, "", nextPath + url.search + url.hash);
     router();
   }
 });

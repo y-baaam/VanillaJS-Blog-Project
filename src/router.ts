@@ -4,7 +4,9 @@ import Post from "@views/posts/post";
 import GuestBook from "@views/guest-book";
 import ErrorPage from "@views/error";
 
-type ViewFunction = () => HTMLElement | Promise<string | HTMLElement | void>;
+type ViewFunction = (
+  ...args: string[]
+) => HTMLElement | Promise<string | HTMLElement | void>;
 
 const routes: Record<string, ViewFunction> = {
   "/": Home,
@@ -13,54 +15,51 @@ const routes: Record<string, ViewFunction> = {
   "/guestBook": GuestBook,
 };
 
-const pathToRegex = (path: string): RegExp => {
-  return new RegExp(
+const pathToRegex = (path: string): RegExp =>
+  new RegExp(
     "^" + path.replace(/\//g, "\\/").replace(/:\w+/g, "([^/]+)") + "$"
   );
-};
+
+// 끝 슬래시 제거
+const normalizePath = (pathname: string) =>
+  pathname === "/" ? "/" : pathname.replace(/\/+$/, "");
 
 async function router(): Promise<void> {
-  const path = window.location.pathname;
-  let matched = false;
-
-  // app은 SPA의 메인 콘텐츠를 동적으로 표시하는 데 사용됩니다.
   const appDiv = document.getElementById("app");
-
   if (!appDiv) return;
 
-  for (const [routePath, viewFunction] of Object.entries(routes)) {
-    const regex = pathToRegex(routePath);
-    const match = path.match(regex);
+  // 주소 정규화 필요하면 replaceState로 교체(히스토리 안 늘림)
+  const current = location.pathname;
+  const normalized = normalizePath(current);
+  if (normalized !== current) {
+    history.replaceState(
+      null,
+      "",
+      normalized + location.search + location.hash
+    );
+  }
+
+  const path = normalized;
+  for (const [routePath, viewFn] of Object.entries(routes)) {
+    const match = path.match(pathToRegex(routePath));
     if (match) {
-      matched = true;
-
-      // URL에서 파라미터 추출
-      const params: string[] = match.slice(1);
-      let viewContent;
-
       try {
-        viewContent = await viewFunction(...(params as []));
-      } catch (error) {
-        console.error("error", error);
-        viewContent = ErrorPage();
+        const params = match.slice(1);
+        const view = await viewFn(...params);
+        if (typeof view === "string") {
+          appDiv.innerHTML = view;
+        } else if (view instanceof HTMLElement) {
+          appDiv.replaceChildren(view);
+        }
+      } catch (err) {
+        console.error(err);
+        appDiv.replaceChildren(ErrorPage());
       }
-
-      // 뷰 콘텐츠 렌더링
-      if (typeof viewContent === "string") {
-        appDiv.innerHTML = viewContent;
-      } else if (viewContent instanceof HTMLElement) {
-        appDiv.innerHTML = "";
-        appDiv.appendChild(viewContent);
-      }
-      break;
+      return;
     }
   }
 
-  if (!matched) {
-    const errorPage = ErrorPage();
-    appDiv.innerHTML = "";
-    appDiv.appendChild(errorPage);
-  }
+  appDiv.replaceChildren(ErrorPage());
 }
 
 export default router;

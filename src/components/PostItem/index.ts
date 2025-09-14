@@ -4,7 +4,7 @@ export default function PostItem(posts: Post[]) {
     .map(
       (post) => `
     <div class="p-4 hover:bg-black-200 rounded-lg">
-      <a class="no-underline text-white-200 visited:text-white-200" href=${post.path}>
+      <a class="no-underline text-white-200 visited:text-white-200" href=${post.path} data-link>
         <h4 class="my-2 text-subTitle-bold">
           ${post.title}
         </h4>
