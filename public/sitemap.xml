@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+    <url>
+      <loc>https://www.y-baam.net/</loc>
+      <lastmod>2025-09-12T02:33:54.980Z</lastmod>
+      <changefreq>daily</changefreq>
+      <priority>0.8</priority>
+    </url>
+  
+    <url>
+      <loc>https://www.y-baam.net/posts</loc>
+      <lastmod>2025-09-12T02:33:54.981Z</lastmod>
+      <changefreq>daily</changefreq>
+      <priority>0.8</priority>
+    </url>
+  
+    <url>
+      <loc>https://www.y-baam.net/posts/5-useReducer</loc>
+      <lastmod>2025-09-12T02:33:54.981Z</lastmod>
+      <changefreq>daily</changefreq>
+      <priority>0.8</priority>
+    </url>
+  
+    <url>
+      <loc>https://www.y-baam.net/posts/4-memoization</loc>
+      <lastmod>2025-09-12T02:33:54.981Z</lastmod>
+      <changefreq>daily</changefreq>
+      <priority>0.8</priority>
+    </url>
+  
+    <url>
+      <loc>https://www.y-baam.net/posts/3-singleton</loc>
+      <lastmod>2025-09-12T02:33:54.981Z</lastmod>
+      <changefreq>daily</changefreq>
+      <priority>0.8</priority>
+    </url>
+  
+    <url>
+      <loc>https://www.y-baam.net/posts/2-IIFE</loc>
+      <lastmod>2025-09-12T02:33:54.981Z</lastmod>
+      <changefreq>daily</changefreq>
+      <priority>0.8</priority>
+    </url>
+  
+    <url>
+      <loc>https://www.y-baam.net/posts/1-compile</loc>
+      <lastmod>2025-09-12T02:33:54.981Z</lastmod>
+      <changefreq>daily</changefreq>
+      <priority>0.8</priority>
+    </url>
+  
+    <url>
+      <loc>https://www.y-baam.net/guestBook</loc>
+      <lastmod>2025-09-12T02:33:54.981Z</lastmod>
+      <changefreq>daily</changefreq>
+      <priority>0.8</priority>
+    </url>
+  
+    <url>
+      <loc>https://www.y-baam.net/posts/1-compile</loc>
+      <lastmod>2025-09-12T02:33:54.981Z</lastmod>
+      <changefreq>daily</changefreq>
+      <priority>0.8</priority>
+    </url>
+  
+    <url>
+      <loc>https://www.y-baam.net/posts/2-IIFE</loc>
+      <lastmod>2025-09-12T02:33:54.981Z</lastmod>
+      <changefreq>daily</changefreq>
+      <priority>0.8</priority>
+    </url>
+  
+    <url>
+      <loc>https://www.y-baam.net/posts/3-singleton</loc>
+      <lastmod>2025-09-12T02:33:54.981Z</lastmod>
+      <changefreq>daily</changefreq>
+      <priority>0.8</priority>
+    </url>
+  
+    <url>
+      <loc>https://www.y-baam.net/posts/4-memoization</loc>
+      <lastmod>2025-09-12T02:33:54.981Z</lastmod>
+      <changefreq>daily</changefreq>
+      <priority>0.8</priority>
+    </url>
+  
+    <url>
+      <loc>https://www.y-baam.net/posts/5-useReducer</loc>
+      <lastmod>2025-09-12T02:33:54.981Z</lastmod>
+      <changefreq>daily</changefreq>
+      <priority>0.8</priority>
+    </url>
+  
+</urlset>
