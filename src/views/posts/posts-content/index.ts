@@ -32,7 +32,7 @@ export default function createPostsContent(
 
   return `
   <section class="w-full">
-      <div class="flex flex-row overflow-y-hidden gap-x-6 scrollbar-hide p-4 mb-3">
+      <div class="flex flex-row overflow-x-auto overflow-y-hidden gap-x-4 sm:gap-x-6 scrollbar-hide p-2 sm:p-4 mb-3">
         ${uniqueCategoriesMap.join("")}
       </div>
       ${filteredPostItemsHtml}

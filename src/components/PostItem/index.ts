@@ -3,12 +3,12 @@ export default function PostItem(posts: Post[]) {
   return posts
     .map(
       (post) => `
-    <div class="p-4 hover:bg-black-200 rounded-lg">
+    <div class="p-2 sm:p-4 hover:bg-black-200 rounded-lg">
       <a class="no-underline text-white-200 visited:text-white-200" href=${post.path} data-link>
-        <h4 class="my-2 text-subTitle-bold">
+        <h4 class="my-1 sm:my-2 text-subTitle-bold">
           ${post.title}
         </h4>
-        <p class="text-caption1 mb-4">
+        <p class="text-caption1 mb-2 sm:mb-4">
           ${post.description}
         </p>
         <div class="flex flex-row justify-between">

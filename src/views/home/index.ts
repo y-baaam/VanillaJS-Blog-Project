@@ -10,8 +10,8 @@ export default async function Home() {
   const rotatingWords = ["Frontend", "JavaScript", "React", "Explore"];
   const content = `
     <main>
-      <section class="flex justify-between flex-row md:text-title text-subTitle font-GmarketSansLight mt-20 mb-24">
-        <div class="h-28 flex flex-col justify-between">
+      <section class="flex flex-col md:flex-row justify-between md:text-title text-subTitle font-GmarketSansLight mt-8 md:mt-20 mb-12 md:mb-24 gap-6 md:gap-0">
+        <div class="h-auto md:h-28 flex flex-col justify-between">
           <div>안녕하세요! 😀</div>
           <div class="w-full">
             <span class="relative" id="rotatingText"></span> <span class="md:-m-2 -m-1 animate-typing">|</span>
@@ -20,7 +20,7 @@ export default async function Home() {
           <div>개발자 <strong class="font-GmarketSansLight">송영범</strong>입니다.</div>
         </div>
 
-        <div class="h-28 flex flex-col justify-between text-subTitle">
+        <div class="h-auto md:h-28 flex flex-col justify-between text-subTitle gap-2 md:gap-0">
           <a href="https://github.com/y-baaam" class="">github</a>
           <a href="https://www.linkedin.com/in/young-beom-song/" class="">linkedIn</a>
           <a href="https://www.rallit.com/resumes/52341@dudqja3674/%EC%86%A1%EC%98%81%EB%B2%94" class="">resume</a>

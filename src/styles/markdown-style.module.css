@@ -6,51 +6,86 @@
 .markdown h2,
 .markdown h3,
 .markdown h4 {
-  margin-top: 1.8rem;
-  line-height: 250%;
+  margin-bottom: 0.5rem;
+  line-height: 2;
   font-family: "GmarketSansMedium";
 }
 
 .markdown h1 {
-  font-size: 2rem;
+  font-size: 1.5rem;
+  margin-top: 1.1rem;
 }
 
 .markdown h2 {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
+  margin-top: 1rem;
 }
 
 .markdown h3 {
-  font-size: 1.17rem;
+  font-size: 1.1rem;
+  margin-top: 0.7rem;
 }
 
 .markdown h4 {
   font-size: 1rem;
+  margin-top: 0.6rem;
+}
+
+/* 모바일에서 더 작은 간격 */
+@media (max-width: 768px) {
+  .markdown h1,
+  .markdown h2,
+  .markdown h3,
+  .markdown h4 {
+    margin-top: 0.8rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .markdown h1 {
+    font-size: 1.3rem;
+    margin-top: 0.6rem;
+  }
+
+  .markdown h2 {
+    font-size: 1.15rem;
+    margin-top: 0.5rem;
+  }
+
+  .markdown h3 {
+    font-size: 1rem;
+    margin-top: 0.4rem;
+  }
+
+  .markdown h4 {
+    font-size: 0.9rem;
+    margin-top: 0.3rem;
+  }
 }
 
 .markdown p {
-  margin-bottom: 1rem;
-  line-height: 200%;
+  margin-bottom: 0.8rem;
+  line-height: 1.7;
 }
 
 .markdown ul {
   padding-left: 1.25rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem;
   list-style-position: inside;
   list-style-type: disc;
-  line-height: 200%;
+  line-height: 1.7;
 }
 
 .markdown ol {
   padding-left: 1.25rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem;
   list-style-position: inside;
   list-style-type: decimal;
-  line-height: 200%;
+  line-height: 1.7;
 }
 
 .markdown li {
-  margin-bottom: 0.5rem;
-  line-height: 200%;
+  margin-bottom: 0.3rem;
+  line-height: 1.7;
 }
 
 .markdown a {
@@ -93,23 +128,23 @@
   padding-left: 1rem;
   padding-right: 1rem;
   color: #6a737d;
-  margin-bottom: 1rem;
-  line-height: 200%;
+  margin-bottom: 0.8rem;
+  line-height: 1.6;
 }
 
 .markdown img {
   max-width: 100%;
   height: auto;
   border-radius: 0.25rem;
-  margin-bottom: 2.5rem;
-  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
 }
 
 .markdown table {
   width: 100%;
   border-collapse: collapse;
-  margin-bottom: 1rem;
-  line-height: 200%;
+  margin-bottom: 0.8rem;
+  line-height: 1.6;
 }
 
 .markdown th,
@@ -117,19 +152,19 @@
   border: 1px solid #ddd;
   padding: 0.5rem;
   text-align: left;
-  line-height: 200%;
+  line-height: 1.6;
 }
 
 .markdown th {
   background-color: #f5f5f5;
   font-weight: bold;
-  line-height: 200%;
+  line-height: 1.6;
 }
 
 .markdown hr {
   border: 0;
   border-top: 0.0625rem solid rgb(67, 67, 73);
-  margin: 1.5rem 0;
+  margin: 1rem 0;
 }
 
 .markdown strong {
