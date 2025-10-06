@@ -38,5 +38,13 @@
     "category": "React",
     "path": "/posts/5-useReducer",
     "public": true
+  },
+  {
+    "title": "NestJS에서 DTO, Entity, Domain의 차이",
+    "description": "NestJS 기준으로 DTO, Entity, Domain이 각각 어떤 역할을 하는지, 어떻게 연결되는지 확인해봅니다.",
+    "date": "2025-10-06",
+    "category": "Backend",
+    "path": "/posts/6-nestjs-dto-entity-domain",
+    "public": true
   }
 ]
