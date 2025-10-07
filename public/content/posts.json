@@ -54,5 +54,13 @@
     "category": "Backend",
     "path": "/posts/7-ioc-di",
     "public": true
+  },
+  {
+    "title": "NestJS의 IoC 컨테이너 구조",
+    "description": "Provider, Module, Scope로 이해하는 NestJS의 내부 설계",
+    "date": "2025-10-08",
+    "category": "Backend",
+    "path": "/posts/8-nestjs-ioc-container-architecture",
+    "public": true
   }
 ]
