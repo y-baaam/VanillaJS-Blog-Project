@@ -17,7 +17,7 @@ NestJS를 공부하다 보면 자주 듣는 단어가 있습니다.
 ## 1. DTO (Data Transfer Object)
 > "요청(Request)과 응답(Response)을 위한 데이터 구조"
 
-DTO는 말 그대로 데이터를 전달(Transfer)하기 위한 객치엡니다.
+DTO는 말 그대로 데이터를 전달(Transfer)하기 위한 객체입니다.
 Controller <-> Service 사이, 혹은 클라이언트 <-> 서버 간에 데이터의 형태를 명확하게 정의하기 위해 사용합니다.
 
 보통 NestJS에서는 class-validator 와 함께 사용하여 입력값을 검증(validation)하는 역할도 맡습니다.
@@ -233,10 +233,10 @@ export class PostEntity {
   authorId: number;
 }
 
+```
 역할:
 - 실제 DB 테이블(`posts`)과 연결되는 ORM 모델입니다.
 - Repository에서 DB에 데이터를 저장하거나 읽을 때 사용됩니다.
-```
 
 #### 4. `PostRepository` - DB 접근 계층
 ```ts
