@@ -83,11 +83,11 @@ module.exports = {
           { fontWeight: "600", lineHeight: "1.25rem" },
         ],
 
-        title: ["2rem", { fontWeight: "500", lineHeight: "1.85rem" }],
-        "title-bold": ["2rem", { fontWeight: "600", lineHeight: "1.85rem" }],
+        title: ["2rem", { fontWeight: "500", lineHeight: "2.5rem" }],
+        "title-bold": ["2rem", { fontWeight: "600", lineHeight: "2.5rem" }],
         "title-extra-bold": [
           "2rem",
-          { fontWeight: "700", lineHeight: "1.85rem" },
+          { fontWeight: "700", lineHeight: "2.5rem" },
         ],
 
         subTitle: ["1.3rem", { fontWeight: "500", lineHeight: "1.625rem" }],
