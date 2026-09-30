@@ -68,17 +68,17 @@
 }
 
 .markdown ul {
-  padding-left: 1.25rem;
+  padding-left: 1.5rem;
   margin-bottom: 0.8rem;
-  list-style-position: inside;
+  list-style-position: outside;
   list-style-type: disc;
   line-height: 1.7;
 }
 
 .markdown ol {
-  padding-left: 1.25rem;
+  padding-left: 1.5rem;
   margin-bottom: 0.8rem;
-  list-style-position: inside;
+  list-style-position: outside;
   list-style-type: decimal;
   line-height: 1.7;
 }
@@ -140,10 +140,14 @@
   margin-top: 1rem;
 }
 
+.markdown .tableWrapper {
+  overflow-x: auto;
+  margin-bottom: 0.8rem;
+}
+
 .markdown table {
   width: 100%;
   border-collapse: collapse;
-  margin-bottom: 0.8rem;
   line-height: 1.6;
 }
 

@@ -55,6 +55,13 @@ export default async function Post(): Promise<string | HTMLElement> {
     hljs.highlightElement(block as HTMLElement);
   });
 
+  rawHtml.querySelectorAll("table").forEach((table) => {
+    const wrapper = document.createElement("div");
+    wrapper.className = markdownStyle["tableWrapper"];
+    table.replaceWith(wrapper);
+    wrapper.appendChild(table);
+  });
+
   // 이미지 Lazy Loading 및 애니메이션 적용
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
