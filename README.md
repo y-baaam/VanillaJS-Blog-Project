@@ -2,7 +2,7 @@
 
 ## 프로젝트 소개
 JavaScript만을 사용하여 SPA와 다양한 기능들을 구현한 프로젝트입니다.
-https://www.y-baam.net
+https://www.y-baam.com
 
 웹 표준을 준수하도록 노력했습니다.
   - 크로스 브라우저 간 호환성

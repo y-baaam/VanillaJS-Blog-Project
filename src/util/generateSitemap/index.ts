@@ -65,7 +65,7 @@ function createSitemapContent(urls: SitemapUrl[]): string {
     .map(
       (urlObj) => `
     <url>
-      <loc>https://www.y-baam.net${urlObj.url}</loc>
+      <loc>https://www.y-baam.com${urlObj.url}</loc>
       <lastmod>${new Date().toISOString()}</lastmod>
       <changefreq>${urlObj.changefreq}</changefreq>
       <priority>${urlObj.priority}</priority>

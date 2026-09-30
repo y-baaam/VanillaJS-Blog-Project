@@ -1,5 +1,5 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.y-baam.net/sitemap.xml
-Host: https://www.y-baam.net
+Sitemap: https://www.y-baam.com/sitemap.xml
+Host: https://www.y-baam.com
