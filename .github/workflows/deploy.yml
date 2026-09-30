@@ -33,7 +33,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: Install pnpm
-        run: npm install -g pnpm@8
+        run: npm install -g pnpm@10
 
       - name: Set up pnpm global bin directory
         run: |
