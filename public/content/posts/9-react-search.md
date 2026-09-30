@@ -1,5 +1,5 @@
 ---
-emoji: "🙀"
+emoji: "🔍"
 title: "검색창의 비동기 요청 처리"
 date: "2026-09-30"
 categories: React
