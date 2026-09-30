@@ -15,18 +15,21 @@ body {
 
 @font-face {
   font-family: "GmarketSansLight";
-  src: url("../../public/fonts/GmarketSansLight.otf") format("opentype");
+  src: url("../../public/fonts/GmarketSansLight.woff2") format("woff2");
+  font-display: swap;
   font-style: normal;
 }
 
 @font-face {
   font-family: "GmarketSansMedium";
-  src: url("../../public/fonts/GmarketSansMedium.otf") format("opentype");
+  src: url("../../public/fonts/GmarketSansMedium.woff2") format("woff2");
+  font-display: swap;
   font-style: normal;
 }
 
 @font-face {
   font-family: "GmarketSansBold";
-  src: url("../../public/fonts/GmarketSansBold.otf") format("opentype");
+  src: url("../../public/fonts/GmarketSansBold.woff2") format("woff2");
+  font-display: swap;
   font-style: normal;
 }
