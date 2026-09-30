@@ -1,0 +1,8 @@
+# image-webpack-loader는 webpack 설정에서 쓰지 않아 이미지 바이너리를 받을 필요가 없다
+ignoredBuiltDependencies:
+  - "@swc/core"
+  - cwebp-bin
+  - gifsicle
+  - mozjpeg
+  - optipng-bin
+  - pngquant-bin

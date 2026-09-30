@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "packageManager": "pnpm@10.17.1",
   "scripts": {
     "start": "webpack serve --open --config config/webpack.dev.js",
     "build": "webpack --config config/webpack.prod.js",
