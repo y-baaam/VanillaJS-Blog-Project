@@ -62,5 +62,13 @@
     "category": "Backend",
     "path": "/posts/8-nestjs-ioc-container-architecture",
     "public": true
+  },
+  {
+    "title": "검색창의 비동기 요청 처리",
+    "description": "먼저 보낸 요청이 늦게 도착하면 생기는 문제를 코드 흐름으로 따라가기",
+    "date": "2026-09-30",
+    "category": "React",
+    "path": "/posts/9-react-search",
+    "public": true
   }
 ]
