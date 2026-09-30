@@ -9,8 +9,8 @@ export default function ErrorPage() {
       <div>페이지를 찾을 수 없습니다.</div>
     </h1>
     <div class="flex flex-col w-full justify-center items-center">
-      <a href="/" class="w-96 text-center p-4 my-4 text-black-100 bg-white-100 cursor-pointer">홈으로</a>
-      <a onclick="history.back()" class="w-96 text-center p-4 my-4 text-black-100 bg-white-100 cursor-pointer">이전 페이지</a>
+      <a href="/" class="w-full max-w-sm text-center p-4 my-4 text-black-100 bg-white-100 cursor-pointer">홈으로</a>
+      <button type="button" onclick="history.back()" class="w-full max-w-sm text-center p-4 my-4 text-black-100 bg-white-100 cursor-pointer">이전 페이지</button>
     </div>
   </section>
   `;
