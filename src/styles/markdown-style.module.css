@@ -9,6 +9,7 @@
   margin-bottom: 0.5rem;
   line-height: 2;
   font-family: "GmarketSansMedium";
+  scroll-margin-top: 1.5rem;
 }
 
 .markdown h1 {

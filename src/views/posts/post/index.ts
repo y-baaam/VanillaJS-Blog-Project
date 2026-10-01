@@ -3,6 +3,10 @@ import markdownStyle from "@/styles/markdown-style.module.css";
 import ErrorPage from "@views/error";
 import PostNavigation from "@comp/PostNavigation";
 import utterances from "@comp/utterances";
+import TableOfContents, {
+  TocItem,
+  setupTocHighlight,
+} from "@comp/TableOfContents";
 import { getAllPosts } from "@/api/posts";
 import matter from "gray-matter";
 import * as marked from "marked";
@@ -69,6 +73,17 @@ export default async function Post(): Promise<string | HTMLElement> {
     wrapper.appendChild(table);
   });
 
+  const tocItems: TocItem[] = [];
+  rawHtml.querySelectorAll("h2, h3").forEach((heading, index) => {
+    heading.id = `heading-${index}`;
+    tocItems.push({
+      id: heading.id,
+      text: heading.textContent ?? "",
+      level: heading.tagName === "H2" ? 2 : 3,
+    });
+  });
+  const toc = TableOfContents(tocItems);
+
   // 이미지 Lazy Loading 및 애니메이션 적용
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
@@ -103,12 +118,27 @@ export default async function Post(): Promise<string | HTMLElement> {
       <div class="text-white-400 text-caption2-bold pt-2">${frontMatter.date} · 약 ${readingMinutes}분</div>
     </header>
     <hr class="mt-6 mb-6 border-y-gray-700"/>
+    ${toc.inline}
+    ${toc.side}
     <div class=${markdownStyle["markdown"]}>${rawHtml.innerHTML}</div>
     ${navigationHtml}
     <div id="post-comments" class="mt-12"></div>
   </section>`;
   const layoutElement = Layout(content) as HTMLElement;
   document.body.appendChild(layoutElement);
+
+  // 해시 이동은 popstate를 일으켜 라우터가 페이지를 다시 그리므로 직접 스크롤한다
+  layoutElement.addEventListener("click", (e) => {
+    const link = (e.target as HTMLElement).closest<HTMLAnchorElement>(
+      "a[data-toc]"
+    );
+    if (!link) return;
+    e.preventDefault();
+    layoutElement
+      .querySelector(`#${link.dataset.toc}`)
+      ?.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+  setupTocHighlight(layoutElement, tocItems);
   utterances("y-baaam/VanillaJS-Blog-Project", "comment", "post-comments");
 
   layoutElement.querySelectorAll("img").forEach((img) => {
