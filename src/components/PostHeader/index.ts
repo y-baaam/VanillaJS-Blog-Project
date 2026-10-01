@@ -6,12 +6,9 @@ export default function PostHeader(
   selectedCategory: string | null
 ) {
   const filteredPosts = filterPostsByCategory(posts, selectedCategory);
-  const content = `
-  <div class="flex flex-col justify-center text-center">
-    <div class="text-title-bold">${selectedCategory}</div>
-    <div class="p-3">${filteredPosts.length} posts</div>
+  return `
+  <div class="px-4 mb-4 text-title font-GmarketSansMedium">
+    Posts <span class="text-body font-GmarketSansLight text-muted">${filteredPosts.length}</span>
   </div>
   `;
-
-  return content;
 }

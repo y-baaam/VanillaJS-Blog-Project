@@ -1,6 +1,6 @@
 import { Post } from "@/api/posts";
 import { filterPostsByCategory } from "@/util/filterPostsByCategory";
-import PostItem from "@comp/PostItem";
+import PostIndexItem from "@comp/PostIndexItem";
 
 /**
  * @param {Post[]} posts 렌더링할 포스트의 배열
@@ -13,7 +13,7 @@ export default function createPostsContent(
   selectedCategory: string | null
 ): string {
   const filteredPosts = filterPostsByCategory(posts, selectedCategory);
-  const filteredPostItemsHtml = PostItem(filteredPosts); // 필터링된 포스트를 기반으로 PostItem을 호출
+  const filteredPostItemsHtml = PostIndexItem(filteredPosts);
 
   //중복된 카테고리 목록 필터링
   const uniqueCategories = [
@@ -21,18 +21,16 @@ export default function createPostsContent(
     ...new Set(posts.map((post) => post.category)),
   ];
   const uniqueCategoriesMap = uniqueCategories.map((v) => {
-    return `<div class="${
+    return `<div class="py-2 cursor-pointer whitespace-nowrap ${
       v === selectedCategory
-        ? "cursor-pointer text-body font-GmarketSansMedium"
-        : "cursor-pointer text-body"
+        ? "text-white-200 shadow-[inset_0_-2px_0_#ffb86b]"
+        : "text-muted hover:text-white-200"
     }" data-category="${v}">${v}</div>`;
   });
 
-  console.log(selectedCategory);
-
   return `
-  <section class="w-full">
-      <div class="flex flex-row overflow-x-auto overflow-y-hidden gap-x-4 sm:gap-x-6 scrollbar-hide p-2 sm:p-4 mb-3">
+  <section class="w-full px-4">
+      <div class="flex flex-row overflow-x-auto overflow-y-hidden gap-x-5 scrollbar-hide border-b border-solid border-line mb-2 text-body font-GmarketSansMedium">
         ${uniqueCategoriesMap.join("")}
       </div>
       ${filteredPostItemsHtml}
