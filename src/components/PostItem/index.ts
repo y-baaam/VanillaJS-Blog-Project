@@ -1,22 +1,15 @@
 import { Post } from "@/api/posts";
+import { formatDate } from "@/util/formatDate";
+
 export default function PostItem(posts: Post[]) {
   return posts
     .map(
       (post) => `
-    <div class="p-2 sm:p-4 hover:bg-black-200 rounded-lg">
-      <a class="no-underline text-white-200 visited:text-white-200" href=${post.path} data-link>
-        <h4 class="my-1 sm:my-2 text-subTitle-bold">
-          ${post.title}
-        </h4>
-        <p class="text-caption1 mb-2 sm:mb-4">
-          ${post.description}
-        </p>
-        <div class="flex flex-row justify-between">
-          <div class="text-caption2">${post.date}</div>
-          <div class="text-caption2">${post.category}</div>
-        </div>
-      </a>
-    </div>
+    <a href="${post.path}" data-link class="group block py-5 border-t border-solid border-line">
+      <div class="text-caption2-bold font-GmarketSansMedium text-accent">${post.category} · ${formatDate(post.date)}</div>
+      <h4 class="mt-2 text-subTitle font-GmarketSansMedium text-white-200 group-hover:text-accent">${post.title}</h4>
+      <p class="mt-2 text-caption1 text-muted">${post.description}</p>
+    </a>
   `
     )
     .join("");
