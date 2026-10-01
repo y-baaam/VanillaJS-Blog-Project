@@ -3,6 +3,8 @@ declare module "*.css" {
   export default classes;
 }
 
+declare module "*.scss";
+
 declare module "*.png" {
   const value: any;
   export default value;
