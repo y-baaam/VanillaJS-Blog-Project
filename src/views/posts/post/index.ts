@@ -1,6 +1,8 @@
 import Layout from "@comp/Layout";
 import markdownStyle from "@/styles/markdown-style.module.css";
 import ErrorPage from "@views/error";
+import PostNavigation from "@comp/PostNavigation";
+import { getAllPosts } from "@/api/posts";
 import matter from "gray-matter";
 import * as marked from "marked";
 
@@ -13,10 +15,14 @@ export default async function Post(): Promise<string | HTMLElement> {
 
   // posts.json에서 올바른 파일명을 찾기
   let postContentURL: string;
+  let navigationHtml: string;
   try {
-    const postsResponse = await fetch("/content/posts.json");
-    const posts = await postsResponse.json();
-    const post = posts.find((p: any) => p.path === path);
+    const posts = await getAllPosts();
+    const post = posts.find((p) => p.path === path);
+    navigationHtml = PostNavigation(
+      posts.filter((p) => p.public),
+      path
+    );
 
     if (post) {
       // path에서 파일명 추출 (예: "/posts/1-compile" -> "1-compile")
@@ -92,6 +98,7 @@ export default async function Post(): Promise<string | HTMLElement> {
     </header>
     <hr class="mt-6 mb-6 border-y-gray-700"/>
     <div class=${markdownStyle["markdown"]}>${rawHtml.innerHTML}</div>
+    ${navigationHtml}
   </section>`;
   const layoutElement = Layout(content) as HTMLElement;
   document.body.appendChild(layoutElement);

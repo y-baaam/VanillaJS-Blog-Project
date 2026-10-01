@@ -46,7 +46,7 @@ document.addEventListener("click", (e: MouseEvent) => {
 
   if (nextPath !== location.pathname || url.search || url.hash) {
     history.pushState(null, "", nextPath + url.search + url.hash);
-    router();
+    router().then(() => window.scrollTo(0, 0));
   }
 });
 
