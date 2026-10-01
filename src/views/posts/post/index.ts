@@ -86,6 +86,11 @@ export default async function Post(): Promise<string | HTMLElement> {
     observer.observe(img);
   });
 
+  const readingMinutes = Math.max(
+    1,
+    Math.round((rawHtml.textContent ?? "").length / 500)
+  );
+
   document.title = `영범 블로그 | ${frontMatter.title}`;
 
   const content = `
@@ -94,7 +99,7 @@ export default async function Post(): Promise<string | HTMLElement> {
     <header class="mt-4">
       <div class="text-white-400 rounded-2xl inline-block text-body-bold font-GmarketSansMedium">${frontMatter.categories}</div>
       <div class="text-title mt-2">${frontMatter.title}</div>
-      <div class="text-white-400 text-caption2-bold pt-2">${frontMatter.date}</div>
+      <div class="text-white-400 text-caption2-bold pt-2">${frontMatter.date} · 약 ${readingMinutes}분</div>
     </header>
     <hr class="mt-6 mb-6 border-y-gray-700"/>
     <div class=${markdownStyle["markdown"]}>${rawHtml.innerHTML}</div>
