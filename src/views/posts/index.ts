@@ -10,7 +10,9 @@ import PostHeader from "@comp/PostHeader";
 export default async function Posts() {
   document.title = `영범 블로그 | Posts`;
   const posts: Post[] = await getFeaturedPublicPosts();
-  const categoryState = new State<string | null>("All");
+  const categoryState = new State<string | null>(
+    new URLSearchParams(location.search).get("category") ?? "All"
+  );
 
   function render() {
     const selectedCategory = categoryState.getValue();

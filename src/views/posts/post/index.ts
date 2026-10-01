@@ -97,7 +97,7 @@ export default async function Post(): Promise<string | HTMLElement> {
   <section class="w-full p-4">
   <div class="text-7xl">${frontMatter.emoji}</div>
     <header class="mt-4">
-      <div class="text-white-400 rounded-2xl inline-block text-body-bold font-GmarketSansMedium">${frontMatter.categories}</div>
+      <a href="/posts?category=${encodeURIComponent(frontMatter.categories)}" data-link class="text-white-400 visited:text-white-400 hover:text-white-200 rounded-2xl inline-block text-body-bold font-GmarketSansMedium">${frontMatter.categories}</a>
       <div class="text-title mt-2">${frontMatter.title}</div>
       <div class="text-white-400 text-caption2-bold pt-2">${frontMatter.date} · 약 ${readingMinutes}분</div>
     </header>
