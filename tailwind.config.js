@@ -30,6 +30,9 @@ module.exports = {
       },
 
       colors: {
+        accent: "#ffb86b",
+        line: "#2e2e2e",
+        muted: "#999999",
         black: {
           100: "rgb(51,51,51)",
           200: "rgb(41,41,41)",
