@@ -2,6 +2,7 @@ import Layout from "@comp/Layout";
 import markdownStyle from "@/styles/markdown-style.module.css";
 import ErrorPage from "@views/error";
 import PostNavigation from "@comp/PostNavigation";
+import utterances from "@comp/utterances";
 import { getAllPosts } from "@/api/posts";
 import matter from "gray-matter";
 import * as marked from "marked";
@@ -104,9 +105,11 @@ export default async function Post(): Promise<string | HTMLElement> {
     <hr class="mt-6 mb-6 border-y-gray-700"/>
     <div class=${markdownStyle["markdown"]}>${rawHtml.innerHTML}</div>
     ${navigationHtml}
+    <div id="post-comments" class="mt-12"></div>
   </section>`;
   const layoutElement = Layout(content) as HTMLElement;
   document.body.appendChild(layoutElement);
+  utterances("y-baaam/VanillaJS-Blog-Project", "comment", "post-comments");
 
   layoutElement.querySelectorAll("img").forEach((img) => {
     observer.observe(img);
