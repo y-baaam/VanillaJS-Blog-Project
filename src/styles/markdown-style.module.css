@@ -22,6 +22,17 @@
   margin-top: 2.5rem;
 }
 
+.markdown h2::before {
+  content: "";
+  display: inline-block;
+  width: 3px;
+  height: 0.9em;
+  margin-right: 0.5rem;
+  vertical-align: -0.1em;
+  border-radius: 2px;
+  background: #ffb86b;
+}
+
 .markdown h3 {
   font-size: 1.1rem;
   margin-top: 1.75rem;
@@ -90,18 +101,15 @@
 }
 
 .markdown a {
-  color: #3498db;
-  text-decoration: none;
-}
-
-.markdown a:hover {
+  color: #ffb86b;
   text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 .markdown code {
   background: hsla(44, 6%, 50%, 0.15);
   font-size: 0.8rem;
-  color: #eb5757;
+  color: #ffb86b;
   padding: 0.125rem 0.25rem;
   border-radius: 0.25rem;
 }

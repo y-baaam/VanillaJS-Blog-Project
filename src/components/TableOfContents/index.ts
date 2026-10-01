@@ -13,12 +13,12 @@ const escapeHtml = (text: string) =>
 
 function TocList(items: TocItem[]) {
   return `
-    <ul class="flex flex-col gap-1.5 text-caption1">
+    <ul class="flex flex-col gap-0.5 text-caption1">
       ${items
         .map(
           (item) => `
-        <li class="${item.level === 3 ? "pl-3" : ""}">
-          <a href="#${item.id}" data-toc="${item.id}" class="block text-white-400 visited:text-white-400 hover:text-white-200">${escapeHtml(item.text)}</a>
+        <li>
+          <a href="#${item.id}" data-toc="${item.id}" class="block py-0.5 border-0 border-l-2 border-solid border-line text-muted hover:text-white-200 ${item.level === 3 ? "pl-6" : "pl-3"}">${escapeHtml(item.text)}</a>
         </li>`
         )
         .join("")}
@@ -30,7 +30,7 @@ export default function TableOfContents(items: TocItem[]) {
 
   return {
     inline: `
-    <details class="xl:hidden mb-8 p-4 rounded-lg border border-solid border-black-100">
+    <details class="xl:hidden mb-8 p-4 rounded-lg border border-solid border-line">
       <summary class="cursor-pointer font-GmarketSansMedium">목차</summary>
       <div class="mt-3">${TocList(items)}</div>
     </details>`,
@@ -43,7 +43,11 @@ export default function TableOfContents(items: TocItem[]) {
   };
 }
 
-const ACTIVE_CLASSES = ["!text-white-100", "font-GmarketSansMedium"];
+const ACTIVE_CLASSES = [
+  "!text-white-100",
+  "font-GmarketSansMedium",
+  "!border-accent",
+];
 
 export function setupTocHighlight(root: HTMLElement, items: TocItem[]) {
   if (items.length < 3) return;

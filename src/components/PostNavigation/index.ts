@@ -5,8 +5,8 @@ function NavCard(post: Post | undefined, label: string, align: "left" | "right")
 
   const alignClass = align === "left" ? "text-left" : "text-right";
   return `
-    <a href="${post.path}" data-link class="block p-4 rounded-lg border border-solid border-black-100 hover:bg-black-200 no-underline text-white-200 visited:text-white-200 ${alignClass}">
-      <div class="text-caption1 text-white-400">${label}</div>
+    <a href="${post.path}" data-link class="block p-4 rounded-lg border border-solid border-line hover:border-accent text-white-200 ${alignClass}">
+      <div class="text-caption1 text-muted">${label}</div>
       <div class="mt-1 text-body-bold font-GmarketSansMedium">${post.title}</div>
     </a>`;
 }
@@ -23,7 +23,7 @@ export default function PostNavigation(posts: Post[], currentPath: string) {
   if (!prev && !next) return "";
 
   return `
-  <nav class="mt-16 pt-6 border-t border-solid border-black-100 grid grid-cols-1 sm:grid-cols-2 gap-3">
+  <nav class="mt-16 pt-6 border-t border-solid border-line grid grid-cols-1 sm:grid-cols-2 gap-3">
     ${NavCard(prev, "← 이전 글", "left")}
     ${NavCard(next, "다음 글 →", "right")}
   </nav>`;
